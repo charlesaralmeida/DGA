@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div>
+    <h2>Identifação do gestor</h2>
+    <form>            
+        <label>Matrícula:</label><br>
+        <input type="text" id="gestor_matricula"><br>
+
+        <label>Nome:</label><br>
+        <input type="text" id="gestor_nome"><br>
+
+        <label>E-mail:</label><br>
+        <input type="text" id="gestor_email"><br>
+
+        <label>Ramal:</label><br>
+        <input type="text" id="gestor_ramal"><br>
+
+        <label>Unidade:</label><br>
+        <input type="text" id="gestor_unidade"><br>                          
+    </form> 
+</div>
+
+<button onclick="writeGestor()">OK</button>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+<script>    
+  var firebaseConfig = {
+    apiKey: "AIzaSyDs8OWyb3z70oxbANRhtujozYH8Lp5FIwo",
+    authDomain: "dgaunicamp.firebaseapp.com",
+    databaseURL: "https://dgaunicamp-default-rtdb.firebaseio.com",
+    projectId: "dgaunicamp",
+    storageBucket: "dgaunicamp.appspot.com",
+    messagingSenderId: "927605457632",
+    appId: "1:927605457632:web:9f4eb310f8dd7f428bc685",
+    measurementId: "G-PFJ0J9H1KT"
+  }; 
+  
+  firebase.initializeApp(firebaseConfig);  
+  
+  var database = firebase.database();  
+  var data_to_write;  
+  var data_read = "";
+  var ref = database.ref("/teste");  
+
+  function getDataToWrite(){
+      data_to_write = document.getElementById("fname").value;
+      return data_to_write;
+  }
+  
+  function escrever(){
+    let data = getDataToWrite();
+    let reference = ref;
+    writeData(reference, data);
+  }
+
+  function remover(){
+    let reference = ref;
+    if(removeData(ref)){
+        alert("ok");
+    }else{
+        alert("falhou");
+    }
+  }
+
+  function valores_unit(){        
+    var a = ["ITENS CONTRATADOS [Abastecimento de Material Higiênico]","ITENS CONTRATADOS [Armários (face externa)]","ITENS CONTRATADOS [Azulejos]","ITENS CONTRATADOS [Box]","ITENS CONTRATADOS [Cestos de Lixo]","ITENS CONTRATADOS [Chuveiros]","ITENS CONTRATADOS [Corrimãos]","ITENS CONTRATADOS [Cortinas e/ou Persianas]","ITENS CONTRATADOS [Dispensadores de papel Higiênico]","ITENS CONTRATADOS [Dispensadores de Papel Toalha]","ITENS CONTRATADOS [Divisórias]","ITENS CONTRATADOS [Elevadores]","ITENS CONTRATADOS [Escadas]","ITENS CONTRATADOS [Extintores de Incêndio]","ITENS CONTRATADOS [Filtros e/ou Bebedouros]","ITENS CONTRATADOS [Gabinetes e pias]","ITENS CONTRATADOS [Interruptores e Tomadas e Espelhos]","ITENS CONTRATADOS [Janelas/esquadrias]","ITENS CONTRATADOS [Mobiliários em geral]","ITENS CONTRATADOS [Parapeitos]","ITENS CONTRATADOS [Paredes]","ITENS CONTRATADOS [Peitoril das janelas]","ITENS CONTRATADOS [Pisos/Rodapé]","ITENS CONTRATADOS [Placas indicativas]","ITENS CONTRATADOS [Portas/maçanetas/batentes]","ITENS CONTRATADOS [Quadros em Geral (Negro, Verde, Lousa, Decoração etc)]","ITENS CONTRATADOS [Ralos]","ITENS CONTRATADOS [Rampas]","ITENS CONTRATADOS [Saboneteiras]","ITENS CONTRATADOS [Telefones]","ITENS CONTRATADOS [Torneiras]","ITENS CONTRATADOS [Válvula de Descarga]","ITENS CONTRATADOS [Vasos Sanitários]","ITENS CONTRATADOS [Ventiladores]","ITENS CONTRATADOS [Vidros]","EQUIPAMENTOS, PRODUTOS DE LIMPEZA, EPI's E UNIFORMES [Equipamentos]","EQUIPAMENTOS, PRODUTOS DE LIMPEZA, EPIs E UNIFORMES [Equipamentos de Proteção Individual – EPIs]","EQUIPAMENTOS, PRODUTOS DE LIMPEZA, EPIs E UNIFORMES [Produtos de Limpeza]","EQUIPAMENTOS, PRODUTOS DE LIMPEZA, EPIs E UNIFORMES [Uniforme]"];
+    /* var b = new Array(39);
+    for(let i = 1; i <= b.length; i++){
+      b[i-1] = i.toString;
+    }
+    
+    var result = {};
+    for(let i = 0; i < a.length; i++){
+      let ai = a[i];            
+      let x = {"descricao":ai};      
+      Object.ap
+      assign(result, x);
+    }
+
+    console.log(result);
+   */
+    
+    for(let i = 0; i < a.length; i++){          
+        k = i + 1;            
+        var reference = database.ref(`/itens_qualidade/itens/${k}/descricao`);    
+        writeData(reference,a[i]);
+    }
+
+  }
+
+  function writeGestor(){
+      //let unidade = $("#gestor_unidade").val();
+      //let matricula = $("#gestor_matricula").val();    
+      //let path = avaliacao_ref + "/" + ano_avaliacao + "/" + mes_avaliacao + "/unidades" + "/" + unidade;        
+      var reference = database.ref('/teste/');    
+      //writeData(reference, "1234");    
+      readData(reference);
+  }
+
+  function writeData(reference, data) {
+    // Initialize Firebase     
+    reference.set(data);
+  } 
+
+  function readData(reference){        
+    database.ref('/teste').get().then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log("aqui2");
+      }        
+    });
+  }
+
+  function removeData(reference){
+    reference.remove().then(function() {
+        return true;
+    })
+    .catch(function(error) {
+        return false;
+    });    
+  }
+
+</script>
+
+</body>
+</html>

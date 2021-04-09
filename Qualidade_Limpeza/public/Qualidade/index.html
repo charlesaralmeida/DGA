@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html id>
+    <!--HEAD-->
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="../js/firebase.js"></script>
+        <script src="../js/table.js"></script>
+        <script src="js/gestor.js"></script>    
+        <script src="js/itens.js"></script>        
+        <script src="js/equipamentos.js"></script>
+        <script src="js/pdf.js"></script>
+        <script>
+            window.onload = () => {
+                makeUnidadesLista();
+                makeItemsTable();
+                makeEquipamentosTable();
+            }
+            function post(){
+                var ano = 2021;
+                var mes = 1;                
+                var avaliacao_gestor = getAvaliacaoGestor();                  
+                var avaliacao_itens = getAvaliacaoItens();
+                var avaliacao_equipamentos = getAvaliacaoEquipamentos();                
+                                
+                //exclui "unidade" de "avaliacao_gestor" para evitar redundancia
+                var gestor={};
+                gestor["matricula"] = avaliacao_gestor.matricula;                
+                gestor["nome"] = avaliacao_gestor.nome;
+                gestor["email"] = avaliacao_gestor.email;
+                gestor["ramal"] = avaliacao_gestor.ramal;
+                
+                var data = {};
+                data["gestor"] = gestor;                
+                data["itens"] = avaliacao_itens;
+                data["equipamentos"] = avaliacao_equipamentos;                
+                
+                //posta dados na unidade respectiva
+                var unidade = avaliacao_gestor.unidade;
+                var post_path = "/avaliacoes/" + ano + "/" + mes + "/unidades/" + unidade;                                
+                var reference = database.ref(post_path);
+                updateData(reference, data);
+            }            
+        </script>   
+    </head>
+
+    <!--BODY-->
+    <body id="body">    
+        <button onclick="generatePDF()">Enviar</button>
+        
+        <div>        
+
+            <!--GESTOR-->
+            <div id="div_gestor">
+                <h2>Identificação do gestor</h2>
+                <form id="form_gestor">            
+                    <label>Matrícula:</label><br>
+                    <input type="text" id="gestor_matricula"><br>
+        
+                    <label>Nome:</label><br>
+                    <input type="text" id="gestor_nome"><br>
+        
+                    <label>E-mail:</label><br>
+                    <input type="text" id="gestor_email"><br>
+        
+                    <label>Ramal:</label><br>
+                    <input type="text" id="gestor_ramal"><br>          
+                </form>     
+            </div>    
+
+            <!--ITENS-->
+            <h2>Itens contratados</h2>          
+            <div id="div_itens">        
+            </div>
+
+            <!--EQUIPAMENTOS-->
+            <h2>Equipamentos</h2>            
+            <div id="div_equipamentos">        
+            </div>
+
+        </div>    
+
+    </body>
+</html>
