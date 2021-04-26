@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gmail API Quickstart</title>
+    <meta charset="utf-8" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="5611064416-ll4a7bmtmv43hdov924bgcttr2kmtjc8.apps.googleusercontent.com">    
+  </head>
+  <body>
+    <p>Gmail API Quickstart</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+    <button id="send_button" style="display: none;">Send</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <script type="text/javascript">
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '5611064416-ll4a7bmtmv43hdov924bgcttr2kmtjc8.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyBYXKVE8m40kjdHYgOWyOsmOwOPbihbb0c';   
+      var YOUR_ACCESS_TOKEN = "ya29.a0AfH6SMABRLrnqjw0KVUNKA0gQu_J4MmG2b9Qw-HEtBzT3ePVirrWPah8U5-7LUzzpzwSRa04-5KCViTkMFrQLByPz-Nsy9oJ-S8ij39sgGumH2BGxOpTqgeOX2hWVvdX0r-1Ik-zkFqZB8CpqHF53jzO3DRGjg";   
+
+      // Array of API discovery doc URLs for APIs used by the quickstart
+      var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
+
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      //var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
+      var SCOPES =  'https://mail.google.com/';
+
+      var authorizeButton = document.getElementById('authorize_button');
+      var signoutButton = document.getElementById('signout_button');
+      var sendButton = document.getElementById('send_button');
+
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
+
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initClient() {
+        gapi.client.init({
+          apiKey: API_KEY,
+          clientId: CLIENT_ID,
+          discoveryDocs: DISCOVERY_DOCS,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
+          sendButton.onclick = sendMessage;
+        }, function(error) {
+          appendPre(JSON.stringify(error, null, 2));
+        });
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
+          sendButton.style.display = 'block';          
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+          sendButton.style.display = 'none';          
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      function sendMessage(event){
+        var email;
+        gapi.client.gmail.users.getProfile({'userId': 'me'})
+        .then(function(response) {          
+            email = response.result.emailAddress;          
+            console.log(email);
+            const message =
+              "From: charlesaralmeida@gmail.com\r\n" + 
+              "To: charlesaralmeida@gmail.com\r\n" +              
+              "Subject: Teste Gmail Send\r\n" +
+              "Content-Type: text/html; charset='UTF-8'\r\n\r\n" +                            
+              "<h1>Titulo</h1>" +
+              "<p>Paragrafo!</p>" +
+              "<a href='https://9gag.com/brazil/fresh'>9gagBR</a>";              
+
+
+              // The body needs to be base64url encoded.
+              const encodedMessage = btoa(message);
+
+              const reallyEncodedMessage = encodedMessage.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');                          
+              
+              gapi.client.gmail.users.messages.send({                          
+                   userId: "charlesaralmeida@gmail.com",
+                   resource: {
+              //         // same response with any of these
+                       raw: reallyEncodedMessage
+              //         // raw: encodedMessage
+              //         // raw: message
+                   }
+              }).then(function () { console.log("Send ok")});
+        });        
+       }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }            
+
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>
