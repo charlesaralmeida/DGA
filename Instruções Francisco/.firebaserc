@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dgaunicamp"
+  },
+  "targets": {
+    "dgaunicamp": {
+      "hosting": {
+        "contratos_charles": [
+          "dgaunicamp"
+        ]
+      }
+    }
+  }
+}
