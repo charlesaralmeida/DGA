@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="xlsx.full.min.js"></script> 
+    <script src="excel.js"></script>
+    <script src="firebase.js"></script>
+</head>
+
+<body>
+    <div>
+        <input type="file" id="input" accept=".xls,.xlsx">
+    </div>
+
+    <div>
+        <button id="button" onclick="excel_to_json()">Convert</button>
+    </div>    
+    
+    <div>
+        <button id="button_salvar" onclick="salvar()">Salvar</button>
+    </div>
+    
+    <div>
+        <button id="button_buscar" onclick="buscar()">Buscar</button>
+    </div>
+</body>
+</html>
