@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="xlsx.full.min.js"></script> 
+    <script src="excel.js"></script>
+    <script src="firebase.js"></script>
+    <script src="table.js"></script>
+</head>
+
+<body>
+    <div>
+        <input type="file" id="input" accept=".xls,.xlsx">
+    </div>
+
+    <div>
+        <button id="button" onclick="excel_to_json()">Convert</button>
+    </div>    
+    
+    <div>
+        <label>Mês:<select id="sel_mes"">
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select></label>
+        <label>Ano:<select id="sel_ano"">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>            
+        </select></label>
+    </div>
+
+    <div>
+        <button id="button_salvar" onclick="salvar()">Salvar</button>
+    </div>
+    
+    <div>
+        <button id="button_buscar" onclick="buscar_orgaos()">Todos os órgãos</button>        
+    </div>
+    <div>
+        <label>Cod:<select id="sel_cod" onchange="selectCod()"></select></label>
+        <label>Sigla:<select id="sel_sigla" onchange="selectSigla()"></select></label>
+    </div>
+
+    <div id="table">        
+    </div>
+
+    <div id="table_CentroCusto">        
+    </div>
+
+    <button id="button_habilitar_IncluirCentroCusto" onclick="habilitarIncluirCentroCusto()" hidden>Alterar Centro de Custo</button>
+
+    <div id="incluir_CentroCusto" hidden>
+        <label for="input_CO">CO:</label>
+        <input type="number" id="input_CO" name="input_CO" min="0"><br>        
+        
+        <label for="input_CL">CL:</label>
+        <input type="number" id="input_CL" name="input_CL" min="0"><br>        
+                
+        <label for="input_inicio">Inicio:</label>        
+        <input type="date" id="input_inicio" name="input_inicio" placeholder="dd-mm-yyyy"><br>       
+                
+        <button id="button_salvar_CentroCusto" onclick="salvarCentroCusto()">Salvar</button>         
+    </div>
+
+</body>
+</html>
