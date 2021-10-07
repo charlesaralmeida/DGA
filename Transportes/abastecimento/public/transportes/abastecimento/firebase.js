@@ -5,13 +5,28 @@
 
 var data = [];
 
-function buscar_postos(){        
+function get_cidades(){
     show_loader();
-    reference = database.ref("/Transportes/abastecimento/postos");
+    reference = database.ref("/Transportes/abastecimento/cidades");
+    var cidades = readData(reference);
+    cidades
+    .then((result)=>{                                  
+        fill_select_uf(result);              
+        hide_loader();
+    })
+    .catch((error)=>{
+        console.log(error);
+        hide_loader();
+    });            
+}
+
+function buscar_postos(uf, cidade){        
+    show_loader();
+    reference = database.ref("/Transportes/abastecimento/postos/" + uf + "/" + cidade);
     var postos = readData(reference);    
     postos
     .then((result)=>{                  
-        data = result;         
+        data = result;                 
         makeFullTablePostos(data);              
         hide_loader();
     })

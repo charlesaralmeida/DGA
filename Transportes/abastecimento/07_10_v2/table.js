@@ -78,32 +78,13 @@ function makeFullTablePostos(data){
         insertDataTable(row, item.cidade);                 
         insertDataTable(row, item.uf);        
         //insertDataTable(row, item.telefone);            
-        let fone = "tel:" + item.telefone;        
+        let fone = "tel:" + item.fone;        
         fone = fone.replace(/\s/g, "%20");
-        insertDataTableLink(row, fone, item.telefone);           
+        insertDataTableLink(row, fone, item.fone);           
         //insertDataTable(row, item.razao_social);                  
         //insertDataTable(row, item.cnpj);                                           
         table.appendChild(row);        
     }
-    
-    // let ufs = new Array();
-    // let cidades  = new Array();
-
-    for(let item of data){
-        ufs.push(item.uf);
-        cidades.push(item.cidade);        
-    }
-
-    ufs = removeDuplicates(ufs);
-    cidades = removeDuplicates(cidades);
-
-    ufs.sort();
-    cidades.sort();
-    
-    // document.getElementById("sel_uf").innerHTML = "<option value='' selected disabled hidden>Selecione um Estado</option>";
-    document.getElementById("sel_cidade").innerHTML = "<option value='' selected disabled hidden>Selecione uma Cidade</option>";
-    //for(let item of ufs) createSelect("sel_uf", item);
-    //for(let item of cidades) createSelect("sel_cidade", item);      
         
     document.getElementById("table").append(table);
     document.getElementById("table").style = "margin-letf=auto; margin-right=auto;";
@@ -114,83 +95,21 @@ function removeDuplicates(data){
     return data.filter((value, index)=>data.indexOf(value) === index);
 }
 
-function makeItemTablePostos(data){    
-    var table = document.getElementById("table");
-    table.innerHTML = "";
-    //var fields = ["nome_fantasia", "endereco", "cidade", "uf", "telefone", "razao_social", "cnpj"];
-    var fields = ["Nome do Posto", "Endereço", "Cidade", "Estado", "Telefone"];
-    setHeaderTable(table, fields);    
-    for(let item of data){                                                                
-        var row = createRowTable();
-        insertDataTable(row, item.nome_fantasia);                         
-        link_endereco = item.endereco + " - " + item.cidade + " - " + item.uf;
-        link_endereco = link_endereco.replace(/\s/g, "%20");
-        let link = "https://www.google.com/maps/search/?api=1&query=" + link_endereco;
-        let textlink = item.endereco;
-        //insertDataTable(row, item.endereco);          
-        insertDataTableLink(row, link, textlink);          
-        insertDataTable(row, item.cidade);                 
-        insertDataTable(row, item.uf);
-        let fone = "tel:" + item.telefone;
-        console.log(fone);
-        fone = fone.replace(/\s/g, "%20");
-        //insertDataTable(row, item.telefone);    
-        insertDataTableLink(row, fone, item.telefone);          
-        //insertDataTable(row, item.razao_social);                  
-        //insertDataTable(row, item.cnpj);                           
-        table.appendChild(row);        
-    }    
-    document.getElementById("table").style = "margin-letf=auto; margin-right=auto;";
-}
 
 function selectUF(){    
     let uf = document.getElementById("sel_uf").value;    
     document.getElementById("sel_cidade").innerHTML = "";    
+    let value = "Selecione uma cidade";
+    createSelect("sel_cidade", value);
     for(let cidade in data_select_cidades[uf]){                
         createSelect("sel_cidade", data_select_cidades[uf][cidade]);        
-    }    
-    buscar_postos(uf);
-    // data_select = [];      
-    // for(let item of data){                        
-    //     if(uf===item["uf"]){            
-    //         data_select.push(item);            
-    //     }        
-    // }            
-    
-    // document.getElementById("sel_cidade").innerHTML = "<option value='' selected disabled hidden>Selecione uma Cidade</option>"; 
-
-    // let cidades  = new Array();
-
-    // for(let item of data_select){        
-    //     cidades.push(item.cidade);        
-    // }
-
-    // for(let item of data){        
-    //     cidades.push(item.cidade);        
-    // }
-    
-    // cidades = removeDuplicates(cidades);
-    // cidades.sort();
-
-    // for(let item of cidades){
-    //     createSelect("sel_cidade", item);    
-    // } 
-
-    // document.getElementById("table").innerHTML = "";
-    // makeItemTablePostos(data_select);     
-    // for(let item of cidades) createSelect("sel_cidade", item);      
+    }            
+    document.getElementById("label_sel_cidade").hidden = false;      
+    document.getElementById("sel_cidade").hidden = false;        
 }
 
 function selectCidade(){
     let uf = document.getElementById("sel_uf").value;        
     let cidade = document.getElementById("sel_cidade").value;         
-    data_select = [];
-    for(let item in data){                        
-        if((uf===item["uf"])&&(cidade===item["cidade"])){
-            data_select.push(item);   
-        }        
-    }                        
-
-    document.getElementById("table").innerHTML = "";
-    makeItemTablePostos(data_select);        
+    buscar_postos(uf, cidade);    
 }

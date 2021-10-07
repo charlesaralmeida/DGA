@@ -11,8 +11,7 @@ function get_cidades(){
     var cidades = readData(reference);
     cidades
     .then((result)=>{                                  
-        fill_select_uf(result);
-        //makeFullTablePostos(data);              
+        fill_select_uf(result);              
         hide_loader();
     })
     .catch((error)=>{
@@ -21,15 +20,14 @@ function get_cidades(){
     });            
 }
 
-function buscar_postos(uf){        
+function buscar_postos(uf, cidade){        
     show_loader();
-    reference = database.ref("/Transportes/abastecimento/postos1/" + uf);
+    reference = database.ref("/Transportes/abastecimento/postos/" + uf + "/" + cidade);
     var postos = readData(reference);    
     postos
     .then((result)=>{                  
-        data = result;         
-        console.log(result);
-        //makeFullTablePostos(data);              
+        data = result;                 
+        makeFullTablePostos(data);              
         hide_loader();
     })
     .catch((error)=>{

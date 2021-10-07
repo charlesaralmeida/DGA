@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>    
+<body onload="get_cidades()">    
     <div class="nav">         
 
         <div class="nav-logo">
@@ -41,17 +41,18 @@
     
     <div class="div_busca">
         <div class="div_busca_postos">
-            <button id="button_buscar" onclick="buscar_postos()">Buscar todos os postos</button>        
+            <!-- <button id="button_buscar" onclick="buscar_postos()">Buscar todos os postos</button>         -->
             <div id="loader" class="loader" style="display: none"></div>
         </div>
 
         <div class="div_sel_cidade">
-            <label>UF:<select id="sel_uf" onchange="selectUF()"></select></label>
-            <label>Cidade:<select id="sel_cidade" onchange="selectCidade()"></select></label>
+            <label>Estado:<select id="sel_uf" onchange="selectUF()"><option value=''>Selecione um Estado</option></select></label>
+            <label id="label_sel_cidade" hidden>Cidade:<select id="sel_cidade" onchange="selectCidade()" hidden><option value=''>Selecione uma cidade</option></select></label>
         </div>
     </div>
 
     <div id="table">        
-    </div>    
+    </div>     
+        
 </body>
 </html>

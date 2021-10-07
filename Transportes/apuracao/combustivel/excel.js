@@ -7,9 +7,9 @@ function excel_to_array(key){
             let data = fileReader.result;
             let workbook = XLSX.read(data,{type:"binary"});         
             //todos os dados da planilha
-            let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[workbook.SheetNames[0]]);      
-            console.log(rowObject);
-            //todos os dados agrupados por key
+            let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[workbook.SheetNames[0]]);                  
+            //todos os dados agrupados por key            
+            let valid_rowObject = replace_valid_data_key(rowObject);                        
             arrayExcel = group_by_key(rowObject, key);  
             document.getElementById("button_salvar").disabled = false;         
             resolve(arrayExcel);
@@ -20,8 +20,7 @@ function excel_to_array(key){
 }
 
 function group_by_key(data, key){        
-    key = replace_valid_key(key);    
-    console.log(key);
+    key = replace_valid_key(key);        
     let dados = [];    
     //percorre todos os indices da array data
     for(let row in data){   
@@ -40,6 +39,24 @@ function group_by_key(data, key){
         }
     }
     return dados;
+}
+
+function replace_valid_data_key(data){                    
+    let valid_data = [];
+    for(let row in data){   
+        //extrai os dados json de cada indice da array data
+        let data_row = data[row];                
+        //pega nos dados json o valor de cada key
+        for(let data_key in data_row){            
+            let valid_key = replace_valid_key(data_key);                                    
+            if(valid_key!==data_key){
+                data_row[valid_key] = data_row[data_key];
+                delete data_row[data_key];            
+            }                
+        }        
+        valid_data.push(data_row);
+    }        
+    return valid_data;
 }
 
 function replace_valid_key(key){        

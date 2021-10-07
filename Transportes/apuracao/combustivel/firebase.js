@@ -9,8 +9,7 @@ function salvar(){
     var reference = database.ref("/Transportes/apuracao/combustivel/" + ano + "/" + mes);
     var arrayExcel = excel_to_array("Centro de Custo");    
     arrayExcel
-    .then((result)=>{
-        console.log(result);
+    .then((result)=>{                
         writeData(reference, result);
     })
     .catch((error)=>console.log(error));    
