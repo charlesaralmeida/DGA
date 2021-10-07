@@ -1,0 +1,164 @@
+/*//insira no head do hmtl:
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+*/
+
+function salvar(){        
+    var reference = database.ref("/Transportes/abastecimento/cidades");
+    let key = "uf";
+    var arrayExcel = excel_to_array(key);    
+    arrayExcel
+    .then((result)=>{
+        console.log(result);
+        writeData(reference, result);
+    })
+    .catch((error)=>console.log(error));    
+}
+
+// function buscar(){
+//     var reference = database.ref("/Transportes/apuracao/centros_de_custo");
+//     var centros_de_custo = readData(reference);    
+//     centros_de_custo
+//     .then((result)=>{        
+//         let cc = result;
+//         reference = database.ref("/Transportes/apuracao/orgaos");
+//         var orgaos = readData(reference);    
+//         orgaos
+//         .then((result)=>{    
+//             let org = result;    
+//             data = [];            
+//             for(let key in result){                                
+//                 let obj = {"cod": put_point_cod_orgao(key)};                
+//                 Object.assign(obj, org[key]);
+//                 Object.assign(obj, cc[key]);                           
+//                 data.push(obj);
+//             }            
+//             makeFullTable(data);                                
+//         })
+//         .catch((error)=>console.log(error));        
+//     })
+//     .catch((error)=>console.log(error));        
+// }
+
+var data = [];
+
+function buscar_postos(){    
+    reference = database.ref("/Transportes/abastecimento/postos");
+    var postos = readData(reference);    
+    postos
+    .then((result)=>{    
+        console.log(result);       
+        data = result;         
+        makeFullTablePostos(data);                                
+    })
+    .catch((error)=>console.log(error));        
+}
+
+function buscar_centro_custo(cod){
+    return new Promise((resolve, reject)=>{
+        var reference = database.ref("/Transportes/apuracao/centros_de_custo/" + cod);
+        var centro_de_custo = readData(reference);    
+        centro_de_custo
+        .then((result)=>{        
+            resolve(result);            
+        })
+        .catch((error)=>reject(error));            
+    });
+}
+
+function habilitarIncluirCentroCusto(){
+    document.getElementById("incluir_CentroCusto").hidden=false;    
+    document.getElementById("button_habilitar_IncluirCentroCusto").hidden=true;
+}
+
+function desabilitarIncluirCentroCusto(){
+    document.getElementById("incluir_CentroCusto").hidden=true;    
+    document.getElementById("button_habilitar_IncluirCentroCusto").hidden=false;
+}
+
+function salvarCentroCusto(){    
+    let CO = document.getElementById("input_CO").value;
+    let CL = document.getElementById("input_CL").value;
+    if(CL==="")
+        CL = "-";
+    let inicio = document.getElementById("input_inicio").value;    
+    if(inicio===""){
+        alert("Preencha todos os campos");
+        return false;
+    }else{
+        inicio = formatDateInput(inicio);
+    }    
+    let fim = "-";
+
+    if(CO===""){
+        alert("Preencha todos os campos");        
+    }else{        
+        //se inicio do atual < inicio do cc já cadastrado => erro
+        if(compareDates(inicio, last_CentroCusto["inicio"])){
+            alert("Data de inclusão não pode ser anterior ao início do Centro de Custo atual");
+        }else{  
+            if((CO===last_CentroCusto["CO"])&&(CL===last_CentroCusto["CL"])){
+                alert("Centro de Custo inserido já é o atual");
+            }else{
+                cod = remove_point_cod_orgao(data_select[0].cod);
+                ordem = ordem_last_CentroCusto + 1;    
+                let reference = database.ref("/Transportes/apuracao/centros_de_custo/" + cod + "/" + ordem);    
+                let cc = {};
+                cc["CO"] = CO;                
+                cc["CL"] = CL;
+                cc["inicio"] = inicio;
+                cc["fim"] = fim;                
+                writeData(reference, cc);         
+                reference = database.ref("/Transportes/apuracao/centros_de_custo/" + cod + "/" + ordem_last_CentroCusto + "/fim");    
+                fim = cc["inicio"]; //fim do anterior = inicio do atual                
+                writeData(reference, fim);
+                makeItemTableCentrosCusto(cod);      
+            }
+        }
+    }
+}
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDs8OWyb3z70oxbANRhtujozYH8Lp5FIwo",
+    authDomain: "dgaunicamp.firebaseapp.com",
+    databaseURL: "https://dgaunicamp-default-rtdb.firebaseio.com",
+    projectId: "dgaunicamp",
+    storageBucket: "dgaunicamp.appspot.com",
+    messagingSenderId: "927605457632",
+    appId: "1:927605457632:web:9f4eb310f8dd7f428bc685",
+    measurementId: "G-PFJ0J9H1KT"
+}; 
+  
+firebase.initializeApp(firebaseConfig);  
+
+var database = firebase.database();
+
+function writeData(reference, data) {    
+    reference.set(data);
+} 
+
+function updateData(reference, data) {    
+    reference.update(data);
+} 
+
+function readData(reference){    
+    return new Promise((resolve, reject)=>{
+        reference.get()
+        .then(snapshot => {
+            var data_read = snapshot.val();             
+            resolve(data_read);
+        })
+        .catch(error=>{
+            reject(error);
+        });
+    });
+}
+
+function removeData(reference){
+    reference.remove().then(function() {
+        return true;
+    })
+    .catch(function(error) {
+        return false;
+    });    
+}

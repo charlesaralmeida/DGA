@@ -5,15 +5,28 @@
 
 var data = [];
 
-function buscar_postos(){    
+function buscar_postos(){        
+    show_loader();
     reference = database.ref("/Transportes/abastecimento/postos");
     var postos = readData(reference);    
     postos
     .then((result)=>{                  
         data = result;         
-        makeFullTablePostos(data);                                
+        makeFullTablePostos(data);              
+        hide_loader();
     })
-    .catch((error)=>console.log(error));        
+    .catch((error)=>{
+        console.log(error);
+        hide_loader();
+    });            
+}
+
+function show_loader(){    
+    document.getElementById("loader").style.display = "block";    
+}
+
+function hide_loader(){    
+    document.getElementById("loader").style.display = "none";    
 }
 
 var firebaseConfig = {

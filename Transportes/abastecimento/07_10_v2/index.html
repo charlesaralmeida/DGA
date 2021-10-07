@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>    
+    <script src="firebase.js"></script>
+    <script src="table.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="get_cidades()">    
+    <div class="nav">         
+
+        <div class="nav-logo">
+            <div class="nav-unicamp">
+            <img src="LogotipoUnicamp.png" alt="LogotipoUnicamp.png" width="70" height="70"/>
+            </div>        
+        
+            <div class="nav-dga">
+            <img src="LogotipoDGA.png" alt="LogotipoDGA.png" width="150" height="80"/>
+            </div>
+        </div>
+
+        <div class="nav-postos">                        
+            <p align="center">POSTOS DE COMBUSTÍVEIS CREDENCIADOS</p>            
+        </div>
+
+        <div class="nav-nav-transportes">            
+            <div class="nav-transportes">
+                <p>Diretoria de Transportes</p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+            </div>
+        </div>
+            
+    </div>
+
+    <hr>
+
+    
+    <div class="div_busca">
+        <div class="div_busca_postos">
+            <button id="button_buscar" onclick="buscar_postos()">Buscar todos os postos</button>        
+            <div id="loader" class="loader" style="display: none"></div>
+        </div>
+
+        <div class="div_sel_cidade">
+            <label>UF:<select id="sel_uf" onchange="selectUF()"><option value=''>Selecione um Estado</option></select></label>
+            <label>Cidade:<select id="sel_cidade" onchange="selectCidade()"><option value=''>Selecione uma cidade</option></select></label>
+        </div>
+    </div>
+
+    <div id="table">        
+    </div>     
+        
+</body>
+</html>
