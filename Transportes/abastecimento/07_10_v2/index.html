@@ -46,13 +46,17 @@
         </div>
 
         <div class="div_sel_cidade">
-            <label>Estado:<select id="sel_uf" onchange="selectUF()"><option value=''>Selecione um Estado</option></select></label>
-            <label id="label_sel_cidade" hidden>Cidade:<select id="sel_cidade" onchange="selectCidade()" hidden><option value=''>Selecione uma cidade</option></select></label>
+            <label id="label_sel_uf" hidden>Estado:<select id="sel_uf" onchange="selectUF()"><option value=''>Selecione um Estado</option></select></label>
+            <label id="label_sel_cidade" hidden>Cidade:<select id="sel_cidade" onchange="selectCidade()"><option value=''>Selecione uma cidade</option></select></label>
         </div>
     </div>
 
     <div id="table">        
     </div>     
+
+    <script>
+        get_cidades();
+    </script>
         
 </body>
 </html>

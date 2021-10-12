@@ -104,8 +104,7 @@ function selectUF(){
     for(let cidade in data_select_cidades[uf]){                
         createSelect("sel_cidade", data_select_cidades[uf][cidade]);        
     }            
-    document.getElementById("label_sel_cidade").hidden = false;      
-    document.getElementById("sel_cidade").hidden = false;        
+    document.getElementById("label_sel_cidade").hidden = false;          
 }
 
 function selectCidade(){

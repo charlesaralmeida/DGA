@@ -13,6 +13,7 @@ function get_cidades(){
     .then((result)=>{                                  
         fill_select_uf(result);              
         hide_loader();
+        document.getElementById("label_sel_uf").hidden = false;
     })
     .catch((error)=>{
         console.log(error);
