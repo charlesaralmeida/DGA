@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>      
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>      
+    <script src="firebase.js"></script>
+    <script src="table.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+    <div class="nav">         
+
+        <div class="nav-logo">
+            <div class="nav-unicamp">
+            <img src="LogotipoUnicamp.png" alt="LogotipoUnicamp.png" width="70" height="70"/>
+            </div>        
+        
+            <div class="nav-dga">
+            <img src="LogotipoDGA.png" alt="LogotipoDGA.png" width="150" height="80"/>
+            </div>
+        </div>
+
+        <div class="nav-nav-transportes">            
+            <div class="nav-transportes">
+                <p>Diretoria de Transportes</p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+            </div>
+        </div>
+            
+    </div>
+
+    <hr>
+
+    <progress value="0" max="100" id="progressbar">0%</progress>
+    
+    <div>
+        <input type="file" id="fileUpload">  
+        <button type="submit" onclick="uploadFile()">Upload</button>
+        <button type="submit" onclick="cancelUpload()">Cancelar</button>
+        <button type="submit" onclick="pauseUpload()">Pausar</button>
+        <button type="submit" onclick="resumeUpload()">Continuar</button>
+        <button type="submit" onclick="listFiles()">downloadFile</button>
+        <button type="submit" onclick="deleteFile()">deleteFile</button>
+    </div>   
+    
+    <div id="message">
+        <p></p>
+    </div>
+        
+</body>
+</html>
