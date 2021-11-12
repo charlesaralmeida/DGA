@@ -13,18 +13,18 @@
             <p>TRANSPORTES</p>
         </div>        
         <div class="nav-menu">
-            <p onclick="location.href='canguru.html';">INICIO</p>
-            <p onclick="location.href='https\://dgaunicamp.web.app/transportes/abastecimento/';">ABASTECIMENTO</p>
+            <p onclick="window.open('canguru.html', '_blank');">INICIO</p>
+            <p onclick="window.open('https\://dgaunicamp.web.app/transportes/abastecimento/', '_blank');">ABASTECIMENTO</p>
             <p>MANUTENÇÃO</p>
-            <p>FALE CONOSCO</p>
+            <p onclick="location.href='#contato';">FALE CONOSCO</p>
         </div>
     </div>
     <div class="highligh-container">
         <div class="highligh-phrase">
             <p>Te levamos aonde <br> você precisa</p>
         </div>
-        <div class="highligh-button">
-            <p onclick="location.href='#services-container';">NOSSOS SERVIÇOS  >></p>
+        <div onclick="location.href='#services-container';" class="highligh-button">
+            <p>NOSSOS SERVIÇOS  >></p>
         </div>        
     </div>    
     <div id="services-container" class="services-container">                        
@@ -57,84 +57,40 @@
     </div>
     <div class="mobile-container">
         <div class="mobile-header">
-            <p>Baixe o aplicativo do táxi!</p>
+            <p>Baixe o app do táxi!</p>
         </div>
         <div class="mobile-text">
-            <p>Food truck parks are great, but wouldn't it be better if
-                you could have all of your favorite restaurants
-                in one convenient place? Let's say, your pocket?
-                Well now you can! Now available on iOS and Android,
-                <strong>Kanguru</strong> food delivery is just a tap away
-                so you're sure to never have a 'hangry moment', ever again.
-            </p>
+            <img style="margin-top: 2%;" src="img/pass.png"/>
+            <p>Se você já é cadastrado para utilização do táxi, faça o download do aplicativo e solicite transporte sempre que precisar, esteja onde estiver</p>            
         </div>
         <div class="mobile-download-container">
-            <img class="mobile-download-container-apple" src="img/apple.png" />
-            <img class="mobile-download-container-google" src="img/google_play.png" />
+            <img class="mobile-download-container-apple" onclick="window.open('https://www.apple.com/br/app-store/', '_blank');" src="img/apple.png">
+            <img class="mobile-download-container-google" onclick="window.open('https://play.google.com/store/apps/details?id=br.com.taxidigitaluse&hl=pt/', '_blank');" src="img/google_play.png">
         </div>
     </div>
 
     <div class="footer-container">
         <div class="footer-container-col">
-            <div class="footer-item footer-item1">
-                <header>
-                    recent blogs
-                </header>
+            <div class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Notícias</b></p>                   
                 <ul>
-                    <li>launch november 13</li>
+                    <li>Seminário de mobilidade</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-container-col">
-            <div class="footer-item footer-item2">
-                <header>
-                    social media
-                </header>
-                <div class="icons-container">
-                    <img class="facebook-icon" src="img/facebook.png" />
-                    <img class="twitter-icon" src="img/twitter.png" />
-                    <img class="instagram-icon" src="img/instagram.png" />
-                    <img class="googleplus-icon" src="img/googleplus.png" />
-                </div>
-            </div>
-            <div class="footer-item footer-item3">
-                <header>
-                    company
-                </header>
-                <p>About</p>
-                <p>Careers</p>
-                <p>Team</p>
-                <p>Press</p>
-                <p>FAQ</p>
-                <p>User Agrrement</p>
-                <p>Privacy Popcy</p>
-                <p>Contact Us</p>
-                <p>Become a Partner</p>
-            </div>
+        <div class="footer-container-col">                                        
+                <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>                
+                <p>Sobre</p>
+                <p>Equipe</p>                
+                <p>FAQ</p>                
         </div>
-        <div class="footer-container-col">
-            <div class="footer-item footer-item4">
-                <header>
-                    Account
-                </header>
-                <p>Sign up</p>
-                <p>Log In</p>
+        <div class="footer-container-col">            
+            <div id="contato" class="footer-item footer-item5">                
+                <p style="font-weight: bold; color: white;"><b>Fale conosco</b></p>                
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>                
             </div>
-            <div class="footer-item footer-item5">
-                <header>
-                    Contacting Kanguru
-                </header>
-                <p>Contact no.: +63 2 625 8633</p>
-                <p>Contact E-mail:</p>
-                <p>contact@kanguru.com.ph</p>
-            </div>
-        </div>
-        <div class="footer-container-col">
-            <div class="footer-item footer-item6">
-                <header>&copy 2015 Kanguru</header>
-                <p>&copy 2015 Kanguru, Winning the fight against the monster in your stomach, and feeding Hangry individuals since 2015</p>
-            </div>
-        </div>
+        </div>        
     </div>
 </body>
 
