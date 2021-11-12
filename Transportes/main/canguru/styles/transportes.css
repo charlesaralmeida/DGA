@@ -17,7 +17,22 @@ div, img, p{
     /*outline: 1px solid black;*/
 }
 
-.nav-container{    
+.nav-mail{                
+    height: 40px;                    
+    display: flex;
+    align-items: center;
+}
+
+.nav-mail p{    
+    margin: 0px;    
+    height: 100%;    
+    color:white;    
+    font-weight: bold;      
+    font-family: Robot;
+    background-color: black;    
+}
+
+.nav-container{        
     background-color: white;        
     width: 100%;
     color: black;
@@ -27,6 +42,7 @@ div, img, p{
 }
 
 .nav-logo-container{        
+    margin-top: 3%;
     margin-left:5%;
     display: flex;
     flex-direction: column;
@@ -75,27 +91,31 @@ div, img, p{
     font-size: 110%;
 }
 
-.highligh-container{    
-    margin-left: 10%;
-    width: 50%;
-    outline: 1px solid black;
+.nav-menu p:active{        
+    font-size: 90%;
+}
+
+.highligh-container{        
+    width: 100%;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
     height: 400px; 
     display: flex;               
     justify-content: center;
     align-items:center;    
-    background-image: url(../img/DSC03568.JPG);
+    /*background-image: url(../img/DSC03568_1.jpg);
     background-repeat: no-repeat;                  
     background-position: center;
-    background-size:cover;
+    background-size:cover;*/
     font-family: Arial, Helvetica, sans-serif;    
+    background-color: rgb(36, 33, 33);
+    color: white;
 }
 
 .highligh-phrase{           
-    width: 50%;                
+    width: 50%;                    
 }
 
-.highligh-phrase p{
-    color: rgb(43, 43, 43);
+.highligh-phrase p{    
     font-weight: bold;
     font-size: 350%;    
     text-align: left;          
@@ -106,8 +126,7 @@ div, img, p{
     text-align: center;        
     background-color: rgb(190, 6, 6);
     width: 15%;
-    height: 17%;
-    box-shadow: 2px 2px 2px 2px rgba(36, 35, 35, 0.2);
+    box-shadow: 2px 2px 2px 2px rgba(100, 99, 99, 0.2);
     color:rgb(255, 255, 255);
     font-family: Robot;
     font-weight: bold;
@@ -117,7 +136,72 @@ div, img, p{
 }
 
 .highligh-button:active{
-    margin-top: 0.5%;
+    margin-top: 0.5%;    
+    box-shadow: none;
+    background-color: rgb(180, 6, 6);
+}
+
+.highligh-img{
+    width: 35%;
+}
+
+.services-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.services-container-body{
+    width:100%;
+    margin-top:8%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;    
+}
+
+.services-container-instance{
+    width: 20%;
+    display: flex;
+    flex-direction: column;    
+    box-shadow: 3px 3px 3px 3px rgba(36, 35, 35, 0.2);
+    font-weight: bold;      
+    font-family: Robot;
+}
+
+.services-container-instance img{
+    width:100%;
+}
+
+.services-container-instance p{     
+    margin-left: 7%;
+}
+
+
+.services-container-instance-button{        
+    text-align: center;        
+    background-color: rgb(190, 6, 6);
+    width: 40%;
+    box-shadow: 2px 2px 2px 2px rgba(36, 35, 35, 0.2);
+    color:rgb(255, 255, 255);
+    font-family: Robot;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;    
+    border-color: rgba(85, 84, 84, 0.342);    
+    margin-top: 7%;
+    margin-bottom: 5%;    
+    margin-left: 53%;
+}
+
+.services-container-instance-button p{       
+    text-align: center;    
+}
+
+.services-container-instance-button:active{
+    margin-top: 8%;
+    margin-bottom: 4%;    
+    margin-left: 54%;
     box-shadow: none;
     background-color: rgb(180, 6, 6);
 }
@@ -127,6 +211,7 @@ div, img, p{
     flex-direction: column;
     align-items: center;
     height: 350px;
+    margin-top:5%;
 }
 
 .mobile-header{
