@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/transportes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav-logo-container">
+            <img onclick="location.href='https://www.dga.unicamp.br/';" src="img/LogotipoDGA.png" />
+        </div>
+        <div class="nav-menu">
+            <p onclick="location.href='canguru.html';">INICIO</p>
+            <p class="nav-menu-abastecimento"
+                onclick="window.open('https\://dgaunicamp.web.app/transportes/abastecimento/', '_blank');">ABASTECIMENTO
+            </p>            
+            <p>RELATÓRIOS</p>
+            <p onclick="openModalNormas()">NORMATIVAS</p>
+            <p onclick="location.href='#contato';">FALE COM A GENTE</p>
+        </div>
+    </div>
+
+    <div id="modal-normas" class="modal">
+        <div class="modal-content">
+            <div class="modal-bar-content">
+                <p>Normativas/p>
+            </div>            
+            <p><span style="color:rgb(190,6,6); font-weight: bold;">Táxi:</span>
+                <br/><span class="btn"
+                onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_102_2021.pdf', '_blank');"
+                style="color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Instrução Normativa DGA nº 102/2021</span>
+                <br/>Estabelece procedimentos para utilização de serviços de táxi através de contrato gerenciado pelo Transportes da DGA.</p>
+            <p>Para alterar ou cancelar uma reserva de veículo, quando status da solicitação estiver
+                “Agendado”, o expedidor deverá entrar em contato com a Diretoria de Transportes através dos
+                ramais 14930 ou 14927.</p>
+            <p>Em finais de semana, feriados ou fora do horário de expediente, em caráter excepcional, o
+                cancelamento deverá ser feito diretamente na empresa contratada.</p>
+            <p>O não cancelamento da solicitação em tempo hábil implicará na cobrança para a Unidade/Órgão do
+                valor referente ao serviço solicitado.</p>
+            <span class="close-modal btn" onclick="closeModalNormas()">&times;</span>
+        </div>
+    </div>
+
+    <div class="highligh-container">
+        <div class="highligh-phrase">
+            <p>Transportes</p>
+        </div>
+        <div onclick="location.href='#services-container';" class="highligh-button btn">
+            <p>NOSSOS SERVIÇOS >></p>
+        </div>
+    </div>
+    <div id="services-container" class="services-container">
+        <div class="services-container-body">
+            <div class="services-container-instance">
+                <img src="img/taxi.jpg" />
+                <p>TAXI</p>
+                <p>Transporte de pessoas</p>
+                <div class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+            <div class="services-container-instance">
+                <img src="img/DSC03568.JPG" />
+                <p>FROTA OFICIAL</p>
+                <p>Transporte de pessoas</p>
+                <div onclick="openModalFrota()" class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+            <div id="modal-frota" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Solicitação</p>
+                    </div>
+                    <p>Para solicitar a reserva de um veículo o expedidor deverá solicitar através da <span class="btn"
+                            onclick="window.open('https://www.dga.unicamp.br/exterlogin/', '_blank');"
+                            style="color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Agenda Eletrônica
+                            de
+                            Transportes</span>, com antecedência mínima de 04 (quatro) horas em relação ao horário de
+                        início do serviço.</p>
+                    <p>A <span class="btn" onclick="window.open('https://www.dga.unicamp.br/exterlogin/', '_blank');"
+                            style="color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Agenda Eletrônica
+                            de
+                            Transportes</span> está programada para fechar o agendamento diário às 16h30min, para o dia
+                        corrente.</p>
+                    <p>A solicitação efetuada após as 16h30min só aceitara agendamento a partir das 12h30min do dia útil
+                        seguinte.</p>
+                    <p>As emergências deverão ser tratadas através dos ramais: 14930 ou 14927.</p>
+
+                    <p><span style="color:rgb(190,6,6); font-weight: bold;">Repasse do Custo da Viagem:</span><br />
+                        No início de cada mês subsequente ao da prestação do serviço, a Diretoria de Transportes
+                        encaminhará às Unidades o valor de repasse dos custos com as viagens, conforme estabelece a
+                        <span class="btn"
+                            onclick="window.open('https://www.dga.unicamp.br/referencias/instrucao-normativa-dga-0552006', '_blank');"
+                            style="font-weight: bold; text-decoration: underline;">Instrução
+                            Normativa DGA nº 055/2006.</span>
+                    </p>
+                    <p class="btn" onclick="closeModalFrota(); openModalAlteracao()"
+                        style="background-color:rgb(190,6,6); color: white;font-weight: bold; padding: 1%; width:35%; text-align: center;"><u>Alterar
+                            ou cancelar reserva</u></p>
+                    <span class="close-modal btn" onclick="closeModalFrota()">&times;</span>
+                </div>
+            </div>
+
+            <div id="modal-frota-alteracao" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Alterar ou cancelar reserva</p>
+                    </div>
+                    <p>Para alterar ou cancelar uma reserva de veículo, o expedidor deverá acessar a <span class="btn"
+                            onclick="window.open('https://www.dga.unicamp.br/exterlogin/', '_blank');"
+                            style="color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Agenda Eletrônica
+                            de
+                            Transportes</span> quando a solicitação estiver com status de “Pendente”.</p>
+                    <p>Para alterar ou cancelar uma reserva de veículo, quando status da solicitação estiver
+                        “Agendado”, o expedidor deverá entrar em contato com a Diretoria de Transportes através dos
+                        ramais 14930 ou 14927.</p>
+                    <p>Em finais de semana, feriados ou fora do horário de expediente, em caráter excepcional, o
+                        cancelamento deverá ser feito diretamente na empresa contratada.</p>
+                    <p>O não cancelamento da solicitação em tempo hábil implicará na cobrança para a Unidade/Órgão do
+                        valor referente ao serviço solicitado.</p>
+                    <span class="close-modal btn" onclick="closeModalAlteracao()">&times;</span>
+                </div>
+            </div>
+
+            <div class="services-container-instance">
+                <img src="img/bus.jpg" />
+                <p>ÔNIBUS</p>
+                <p>Transporte de pessoas</p>
+                <div class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-container">
+        <div class="mobile-header">
+            <p>Baixe o app do táxi!</p>
+        </div>
+        <div class="mobile-text">
+            <img style="margin-top: 2%;" src="img/pass.png" />
+            <div class="mobile-download-container">
+                <img class="mobile-download-container-apple btn"
+                    onclick="window.open('https://apps.apple.com/br/app/use-taxi/id803513378', '_blank');"
+                    src="img/apple.png">
+                <img class="mobile-download-container-google btn"
+                    onclick="window.open('https://play.google.com/store/apps/details?id=br.com.taxidigitaluse&hl=pt/', '_blank');"
+                    src="img/google_play.png">
+            </div>
+            <p>Se você já é cadastrado para utilização do táxi, faça o download do aplicativo e solicite transporte
+                sempre que precisar, esteja onde estiver</p>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-container-col">
+            <div class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Notícias</b></p>
+                <ul>
+                    <li>Seminário de mobilidade</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-container-col">
+            <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+            <p class="btn" onclick="openModalAbout()">Sobre</p>
+            <p>Equipe</p>
+            <p>FAQ</p>
+        </div>
+        <div class="footer-container-col">
+            <div id="contato" class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Fale com a gente</b></p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+                <div class="footer-item-contact btn">
+                    <p onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');">Rua Josué de Castro,
+                        140 <br> Cidade Universitária "Zeferino Vaz"</p>
+                    <img onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');"
+                        src="img/Google-Maps-logo.png" style="width:8%;height:40px;" />
+                </div>
+                <p>Barão Geraldo - Campinas/SP</p>
+            </div>
+        </div>
+
+        <div id="modal-about" class="modal">
+            <div class="modal-content">
+                <div class="modal-bar-content">
+                    <p>Sobre a Transportes DGA</p>
+                </div>
+                <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                    Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da UNICAMP.
+                </p>
+                <span class="close-modal btn" onclick="closeModalAbout()">&times;</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
