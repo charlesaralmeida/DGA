@@ -31,6 +31,16 @@ function closeModalAlteracao() {
     openModalFrota();
 }
 
+function openModalNormas(){
+    let modal_normas = document.getElementById("modal-normas");
+    modal_normas.style.display = "block";
+}
+
+function closeModalNormas() {
+    let modal_normas = document.getElementById("modal-normas");
+    modal_normas.style.display = "none";
+}
+
 window.onclick = function (event) {
     let modal_about = document.getElementById("modal-about");
     if (event.target == modal_about) {
