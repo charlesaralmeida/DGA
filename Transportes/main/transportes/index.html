@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/transportes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav-logo-container">
+            <img onclick="window.open('https://www.dga.unicamp.br/', '_blank');" src="img/LogotipoDGA.png" />
+        </div>
+        <div class="nav-menu">
+            <p onclick="location.href='index.html';">INICIO</p>
+            <p class="nav-menu-abastecimento" onclick="location.href='abastecimento/index.html';">POSTOS DE COMBUSTÍVEL
+            </p>
+            <!-- <p>RELATÓRIOS</p> -->
+            <p onclick="location.href='normas.html';">NORMAS</p>
+            <p onclick="location.href='#contato';">FALE COM A GENTE</p>
+        </div>
+    </div>
+
+    <div class="highligh-container">
+        <div class="highligh-phrase">
+            <p>Transportes</p>
+        </div>
+        <div onclick="location.href='#services-container';" class="highligh-button btn">
+            <p>NOSSOS SERVIÇOS >></p>
+        </div>
+    </div>
+    <div id="services-container" class="services-container">
+        <div class="services-container-body">
+            <div class="services-container-instance">
+                <img src="img/agenda.jpg" />
+                <p>AGENDA DE TRANSPORTES</p>
+                <div onclick="location.href='agenda.html';" class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+            <div class="services-container-instance">
+                <img src="img/taxi.jpg" />
+                <p>TAXI</p>
+                <div onclick="location.href='taxi.html';" class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+        </div>
+        <div class="services-container-body">
+            <div class="services-container-instance">
+                <img src="img/DSC03568.JPG" />
+                <p>FROTA OFICIAL</p>
+                <div onclick="location.href='frota.html';" class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+
+            <div class="services-container-instance">
+                <img src="img/bus.jpg" />
+                <p>ÔNIBUS, MICRO-ÔNIBUS E VANS</p>
+                <div onclick="location.href='bus.html';" class="services-container-instance-button btn">
+                    <p>Saiba mais</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-container">
+        <div class="mobile-header">
+            <p>Baixe o app do táxi!</p>
+        </div>
+        <div class="mobile-text">
+            <img style="margin-top: 2%;" src="img/pass.png" />
+            <div class="mobile-download-container">
+                <img class="mobile-download-container-apple btn"
+                    onclick="window.open('https://apps.apple.com/br/app/use-taxi/id803513378', '_blank');"
+                    src="img/apple.png">
+                <img class="mobile-download-container-google btn"
+                    onclick="window.open('https://play.google.com/store/apps/details?id=br.com.taxidigitaluse&hl=pt/', '_blank');"
+                    src="img/google_play.png">
+            </div>
+            <p>Se você já é cadastrado para utilização do táxi, faça o download do aplicativo e solicite transporte
+                sempre que precisar, esteja onde estiver</p>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-container-col">
+            <div class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Comunicados</b></p>
+                <ul>
+                    <li class="btn" onclick="openModal('modal-comunicado-leilao')">Leilão de veículos</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-container-col">
+            <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+            <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+            <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+        </div>
+        <div class="footer-container-col">
+            <div id="contato" class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Fale com a gente</b></p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+                <div class="footer-item-contact btn">
+                    <p onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');">Rua Josué de Castro,
+                        140 <br> Cidade Universitária "Zeferino Vaz"</p>
+                    <img onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');"
+                        src="img/Google-Maps-logo.png" style="width:8%;height:40px;" />
+                </div>
+                <p>Barão Geraldo - Campinas/SP</p>
+            </div>
+        </div>
+
+        <div id="modal-about" class="modal">
+            <div class="modal-content">
+                <div class="modal-bar-content">
+                    <p>Sobre a Transportes DGA</p>
+                </div>
+                <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                    Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da UNICAMP
+                </p>
+                <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
+            </div>
+        </div>
+
+        <div id="modal-comunicado-leilao" class="modal">
+            <div class="modal-content">
+                <div class="modal-bar-content">
+                    <p>Leilão de veículos</p>
+                </div>
+                <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                    veículos disponíveis na Universidade.</p>
+                <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                <ul>
+                    <div style="margin-left: 4%;">
+                        <li>Idade, quilometragem e estado de conservação do veículo</li>
+                        <li>Frequência de uso</li>
+                        <li>Conveniência do veículo próprio em relação às demais modalidades de transporte disponíveis
+                        </li>
+                    </div>
+                </ul>
+                </p>
+                <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
+                    melhores aproveitados se reinvestidos em outras prioridades.</p>
+                <p>Além disso, observados certos critérios, o veículo próprio pode ser substituído por veículos locados
+                    que possuem diversas vantagens.</p>
+                <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                        gente</i>.</p>
+                <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
+            </div>
+        </div>
+
+        <div id="modal-equipe" class="modal">
+            <div class="modal-content">
+                <div class="modal-bar-content">
+                    <p>Equipe Transportes DGA</p>
+                </div>
+                <div>
+                    <p><span style="font-weight: bold;">Coordenador</span><br />
+                        CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
+                    </p>
+
+                    <p><span style="font-weight: bold;">Frota Oficial</span><br />
+                        PAULO LUCIO RESENDE - paulolucio@dga.unicamp.br - (19) 3521-4921<br />
+                        SEBASTIAO JOSE DE FARIA - tiao@dga.unicamp.br - (19) 3521-4922
+                    </p>
+
+                    <p><span style="font-weight: bold;">Agendamentos</span><br />
+                        MARIVALDO BAPTISTA DE OLIVEIRA - marivaldo@dga.unicamp.br - (19) 3521-4929<br />
+                        MARCIO JOSE DOS SANTOS - marcio@dga.unicamp.br - (19) 3521-4930</p>
+
+                    <p><span style="font-weight: bold;">Relatórios e pagamentos</span><br />
+                        ALEXANDRE CARLOS DE OLIVEIRA - alexandre@dga.unicamp.br - (19) 3521-4923<br />
+                        PAULO AUGUSTO BOCCATI - paulo.ab@dga.unicamp.br - (19) 3521-4928</p>
+
+                    <p><span style="font-weight: bold;">Manutenção</span><br />
+                        GETULIO NOGUEIRA ROCHA - getulio@dga.unicamp.br - (19) 3521-4922<br />
+                        SERGIO APARECIDO VICENTIN - vicentin@dga.unicamp.br - (19) 3521-4922</p>
+
+                    <p><span style="font-weight: bold;">Motoristas - (19) 3521-4927</span><br />
+                        ANESIO SOUZA NOGUEIRA - anesio@dga.unicamp.br<br />
+                        EDSON DEZOTE - dezote@dga.unicamp.br<br />
+                        JOSE FELIX DA CRUZ - felix@dga.unicamp.br<br />
+                        JURANDIR ROCHA RIBEIRO - jurandir@dga.unicamp.br<br />
+                        OSVALDO ALVES SOBRINHO - osvaldo@dga.unicamp.br<br />
+                        OSVALDO BOGNAR - bognar@dga.unicamp.br
+                    </p>
+                </div>
+                <span class="close-modal btn" onclick="closeModal('modal-equipe')">&times;</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
