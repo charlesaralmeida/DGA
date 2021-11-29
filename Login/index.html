@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>               
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>         
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="firebase.js"></script>  
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+    <div class="nav">         
+
+        <div class="nav-logo">
+            <div class="nav-unicamp">
+            <img src="LogotipoUnicamp.png" alt="LogotipoUnicamp.png" width="70" height="70"/>
+            </div>        
+        
+            <div class="nav-dga">
+            <img src="LogotipoDGA.png" alt="LogotipoDGA.png" width="150" height="80"/>
+            </div>
+        </div>
+
+        <div class="nav-nav-transportes">            
+            <div class="nav-transportes">
+                <p>Diretoria de Transportes</p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+            </div>
+        </div>
+
+        <div class="nav-user">                        
+                <img id="photo" hidden style="border-radius: 50%; width: 30%; height:30%"/>
+                <p id="name" hidden></p>          
+                <button type="submit" onclick="signOut()">Logout</button>      
+        </div>
+            
+    </div>
+
+    <hr>       
+        
+    <div id="firebaseui-auth-container" hidden></div>
+    <div id="loader" hidden>Loading...</div>    
+    
+    <div id="message">
+        <p></p>
+    </div>
+        
+</body>
+</html>

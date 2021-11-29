@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transportes DGA</title>
+    <link rel="stylesheet" type="text/css" href="styles/transportes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav-logo-container">
+            <img onclick="location.href='https://www.dga.unicamp.br/';" src="img/LogotipoDGA.png" />
+        </div>
+        <div class="nav-menu">
+            <p onclick="location.href='index.html';">INICIO</p>
+            <p class="nav-menu-abastecimento" onclick="location.href='abastecimento/index.html';">POSTOS DE COMBUSTÍVEL
+            </p>
+            <!-- <p>RELATÓRIOS</p> -->
+            <p onclick="location.href='normas.html';">NORMAS</p>
+            <p onclick="location.href='#contato';">FALE COM A GENTE</p>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content-bar">
+            <p>Taxi</p>
+        </div>
+        <div class="content">
+            <div class="content-side-menu">
+                <p>Cadastro de gestores e usuários</p>
+                <p>Solicitar táxi</p>
+                <p>Baixar aplicativo</p>
+                <p><span class="btn"
+                        onclick="window.open('../docs/Manual_usu%C3%A1rio_procedimentos_de_utilizacao_usetaxi.pdf', '_blank');">
+                        Manual de utilização</span></p>
+                <p><span class="btn" onclick="window.open('../docs/Instrucao_DGA_n_102_2021.pdf', '_blank');">
+                        Instrução Normativa DGA nº 102/2021</span></p>
+            </div>
+            <div class="content-content">
+                <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                    Cadastro de gestores e usuários</p>     
+                    <br/>           
+                    <br/>
+                <p>Os interessados em utilizar tais serviços devem ser cadastrados pela Transportes DGA de acordo com os
+                    perfis a seguir.</p>              
+                    <br/>           
+                    <br/>  
+                <p class="content-subtitle"style="font-weight: bold; font-size: 110%; color:rgb(190,6,6)">Gestor do Centro de Custo</p>
+                <br/>
+                <p style="margin-left: 2%;">Servidor da Unidade/Órgão responsável por:</p>
+                <ul>
+                    <li>Cadastro e orientação de usuários</li>
+                    <li>Realizar solicitações de táxi</li>
+                    <li>Acompanhar os serviços de sua respectiva Unidade/Órgão e relatórios de serviços executados (na
+                        plataforma web)</li>
+                    <li>Reportar à Transportes DGA qualquer ocorrência ou anormalidade na execução e utilização dos
+                        serviços</li>
+                </ul>         
+                <br/>       
+                <br/>
+                <p style="font-weight: bold; font-size: 110%; color:rgb(190,6,6)">Usuário</p>
+                <br/>
+                <p style="margin-left: 2%;">Pessoa cadastrada pelo <strong>Gestor do Centro de Custo</strong> autorizada
+                    para solicitar táxis
+                    via plataforma
+                    web e/ou aplicativo para smartphone.</p>                
+                    <br/>
+                    <br/>
+                <p>A Transportes DGA irá cadastrar os Gestores de Centro de Custo e estes poderão optar por solicitar
+                    as corridas dos interessados em sua Unidade/Órgão ou autorizar alguns usuários para que estes
+                    solicitem suas próprias viagens.</p>
+                <br />
+                <br/>
+                <div style="width:100%; display: flex; justify-content: center;">
+                    <div style="width:60%">
+                        <img src="img/esquema_taxi.png" style="width:100%;">
+                    </div>
+                </div>
+                <br />
+                <p style="font-weight: bold;color:rgb(190,6,6)">Cadastro do Gestor do Centro de Custo</p>
+                <p>Para solicitar o cadastro do Gestor do Centro de Custo, o interessado deve:
+                <ol>
+                    <li>Preencher o <span class="btn"
+                            onclick="window.open('docs/Cadastro_de_usuario_usetaxi.doc', '_blank');"
+                            style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                            Formulário de Credenciamento do Gestor</span></li>
+                    <li>Imprimir</li>
+                    <li>Assinar</li>
+                    <li>Recolher a assinatura do responsável em sua Unidade/Órgão (Diretor/ATD/ATU/Expedidor)</li>
+                    <li>Digitalizar o formulário assinado e encaminhá-lo por e-mail: transportes@dga.unicamp.br</li>
+                </ol>
+                </p>
+                <br />
+                <br />
+                <p>Acesse: <span onclick="openModal('modal-cadastro_usuario_taxi')" class="btn"
+                        style="font-style: italic; text-align:right; color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Cadastro
+                        de Usuários</span></p>
+                <div class="slide-container modal" id="modal-cadastro_usuario_taxi">
+                    <div id="cadastro_usuario_taxi_1" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            1. Após cadastro do Gestor, acessar: <span
+                                onclick="window.open('http://usetaxi.com.br', '_blank');" class="btn"
+                                style="font-style: italic; font-weight: bold; text-decoration: underline;">usetaxi.com.br</span>
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img style="width:80%" onclick="window.open('http://usetaxi.com.br', '_blank');" class="btn"
+                                src="img/use_taxi_1.png">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_1', 'cadastro_usuario_taxi_2')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_2" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            2. Clicar em "Empresa" -> "Portal corporativo":
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_2', 'cadastro_usuario_taxi_1')">Anterior</p>
+                            <img src="img/use_taxi_2.png">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_2', 'cadastro_usuario_taxi_3')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_3" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            3. Realizar login através de usuário e senha. Caso este seja o primeiro acesso, será
+                            necessário
+                            criar uma senha:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_3', 'cadastro_usuario_taxi_2')">Anterior</p>
+                            <img src="img/use_taxi_3.png">
+                            <br />
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_3', 'cadastro_usuario_taxi_4')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_4" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            4. Clicar em “PERMITIR” localização:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_4', 'cadastro_usuario_taxi_3')">Anterior</p>
+                            <img src="img/use_taxi_4.png">
+                            <br />
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_4', 'cadastro_usuario_taxi_5')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_5" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            5. Clicar na aba GESTÃO e em seguida em CADASTRO DE AUTORIZADOS:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_5', 'cadastro_usuario_taxi_4')">Anterior</p>
+                            <img src="img/aba_gestao_taxi.png">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_5', 'cadastro_usuario_taxi_6')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_6" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            6. Clicar em APLICAR:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_6', 'cadastro_usuario_taxi_5')">Anterior</p>
+                            <img src="img/aba_cadastro_taxi.png">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_6', 'cadastro_usuario_taxi_7')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_7" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            7. Preencher todas as informações
+                            do formulário:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_7', 'cadastro_usuario_taxi_6')">Anterior</p>
+                            <img src="img/aba_cadastro_taxi_info.png">
+                            <br />
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_7', 'cadastro_usuario_taxi_8')">Próximo</p>
+                        </div>
+                        <div>
+                            Caso o usuário tenha mais de um recurso disponível para solicitar veículos, selecionar o
+                            primeiro e
+                            em
+                            seguida adicionar os demais recursos clicando em +
+                        </div>
+                    </div>
+                    <div style="display:none" id="cadastro_usuario_taxi_8" class="modal-slide">
+                        <div class="modal-slide-bar">8. Em seguida clicar em
+                            SALVAR:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-cadastro_usuario_taxi')">
+                                Fechar
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn"
+                                onclick="moveSlide('cadastro_usuario_taxi_8', 'cadastro_usuario_taxi_7')">Anterior</p>
+                            <img src="img/aba_cadastro_taxi_salvar.png">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <br />
+                <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                    Solicitar táxi</p>
+                <br />
+
+                <ul>
+                    <li>
+                        <p>Os valores das corridas podem ser estimados a cada solicitação de viagem sem a necessidade de
+                            se
+                            confirmar o agendamento</p>
+                    </li>
+                    <li>
+                        <p>Apesar de não ser obrigatório informar o número do celular do passageiro ao solicitar a
+                            corrida,
+                            essa informação é importante para que o passageiro esteja em contato direto com o motorista
+                            pouco antes do embarque</p>
+                    </li>
+                    <li>
+                        <p>Acesse: <span onclick="openModal('modal-util_taxi')" class="btn"
+                                style="font-style: italic; text-align:right; color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">Manual
+                                de utilização</span></p>
+                    </li>
+                </ul>
+                <div class="slide-container modal" id="modal-util_taxi">
+                    <div id="util_taxi_1" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            1. Acessar: <span onclick="window.open('http://usetaxi.com.br', '_blank');"" class=" btn"
+                                style="font-style: italic; font-weight: bold; text-decoration: underline;">usetaxi.com.br</span>
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <img onclick="window.open('http://usetaxi.com.br', '_blank');" class="btn" style="width:80%"
+                                src="img/use_taxi_1.png">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_1', 'util_taxi_2')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_2" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            2. Clicar em "Empresa" -> "Portal corporativo":
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_2', 'util_taxi_1')">Anterior</p>
+                            <img src="img/use_taxi_2.png">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_2', 'util_taxi_3')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_3" class="modal-slide">
+                        <div class="modal-slide-bar">
+                            3. Realizar login através de usuário e senha. Caso este seja o primeiro acesso, será
+                            necessário
+                            criar uma senha:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_3', 'util_taxi_2')">Anterior</p>
+                            <img src="img/use_taxi_3.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_3', 'util_taxi_4')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_4" class="modal-slide">
+                        <div class="modal-slide-bar">4. Clicar em “PERMITIR” localização:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_4', 'util_taxi_3')">Anterior</p>
+                            <img src="img/use_taxi_4.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_4', 'util_taxi_5')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_5" class="modal-slide">
+                        <div class="modal-slide-bar">5. Na aba lateral, clicar em SOLICITAR CORRIDA:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_5', 'util_taxi_4')">Anterior</p>
+                            <img src="img/use_taxi_5.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_5', 'util_taxi_6')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_6" class="modal-slide">
+                        <div class="modal-slide-bar">6. Clicar em PEDIR TÁXI:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_6', 'util_taxi_5')">Anterior</p>
+                            <img src="img/use_taxi_6.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_6', 'util_taxi_7')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_7" class="modal-slide">
+                        <div class="modal-slide-bar">7. Preencher as informações:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_7', 'util_taxi_6')">Anterior</p>
+                            <img src="img/use_taxi_7.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_7', 'util_taxi_8')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_8" class="modal-slide">
+                        <div class="modal-slide-bar">8. Selecionar o recurso e inserir justificativa:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_8', 'util_taxi_7')">Anterior</p>
+                            <img src="img/use_taxi_8.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_8', 'util_taxi_9')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_9" class="modal-slide">
+                        <div class="modal-slide-bar">9. Confirmar:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_9', 'util_taxi_8')">Anterior</p>
+                            <img src="img/use_taxi_9.png">
+                            <br />
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_9', 'util_taxi_10')">Próximo</p>
+                        </div>
+                    </div>
+                    <div style="display:none" id="util_taxi_10" class="modal-slide">
+                        <div class="modal-slide-bar">10. As corridas realizadas podem ser consultadas pelo Gestor em
+                            "Painel" informando o período de interesse:
+                            <p class="modal-slide-bar-button btn" onclick="closeModal('modal-util_taxi')">Fechar</p>
+                        </div>
+                        <div class="slide">
+                            <p class="slide-button btn" onclick="moveSlide('util_taxi_10', 'util_taxi_9')">Anterior</p>
+                            <img style="width: 80%" src="img/use_taxi_10.png">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <br />
+                <div class="mobile-container">
+                    <div class="mobile-header">
+                        <p>Baixe o app do táxi!</p>
+                    </div>
+                    <div class="mobile-text">
+                        <img style="margin-top: 2%;" src="img/pass.png" />
+                        <div class="mobile-download-container">
+                            <img class="mobile-download-container-apple btn"
+                                onclick="window.open('https://apps.apple.com/br/app/use-taxi/id803513378', '_blank');"
+                                src="img/apple.png">
+                            <img class="mobile-download-container-google btn"
+                                onclick="window.open('https://play.google.com/store/apps/details?id=br.com.taxidigitaluse&hl=pt/', '_blank');"
+                                src="img/google_play.png">
+                        </div>
+                        <p>Se você já é cadastrado para utilização do táxi, faça o download do aplicativo e solicite
+                            transporte
+                            sempre que precisar, esteja onde estiver</p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-container-col">
+                <div class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Comunicados</b></p>
+                    <ul>
+                        <li class="btn" onclick="openModal('modal-comunicado-leilao')">Leilão de veículos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-container-col">
+                <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+                <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+                <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+            </div>
+            <div class="footer-container-col">
+                <div id="contato" class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Fale com a gente</b></p>
+                    <p>(19) 3521-4921</p>
+                    <p>transportes@dga.unicamp.br</p>
+                    <div class="footer-item-contact btn">
+                        <p onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');">Rua Josué de
+                            Castro,
+                            140 <br> Cidade Universitária "Zeferino Vaz"</p>
+                        <img onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');"
+                            src="img/Google-Maps-logo.png" style="width:8%;height:40px;" />
+                    </div>
+                    <p>Barão Geraldo - Campinas/SP</p>
+                </div>
+            </div>
+
+            <div id="modal-about" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Sobre a Transportes DGA</p>
+                    </div>
+                    <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                        Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
+                        UNICAMP
+                    </p>
+                    <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
+                </div>
+            </div>
+
+
+            <div id="modal-comunicado-leilao" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Leilão de veículos</p>
+                    </div>
+                    <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                        veículos disponíveis na Universidade.</p>
+                    <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                    <ul>
+                        <div style="margin-left: 4%;">
+                            <li>Idade, quilometragem e estado de conservação do veículo</li>
+                            <li>Frequência de uso</li>
+                            <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
+                                disponíveis
+                            </li>
+                        </div>
+                    </ul>
+                    </p>
+                    <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
+                        melhores aproveitados se reinvestidos em outras prioridades.</p>
+                    <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
+                            onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
+                            style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                            Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os
+                        quais possuem diversas vantagens.</p>
+                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                            gente</i>.</p>
+                    <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
+                </div>
+            </div>
+
+            <div id="modal-equipe" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Equipe Transportes DGA</p>
+                    </div>
+                    <div>
+                        <p><span style="font-weight: bold;">Coordenador</span><br />
+                            CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
+                        </p>
+
+                        <p><span style="font-weight: bold;">Frota Oficial</span><br />
+                            PAULO LUCIO RESENDE - paulolucio@dga.unicamp.br - (19) 3521-4927<br />
+                            SEBASTIAO JOSE DE FARIA - tiao@dga.unicamp.br - (19) 3521-4922
+                        </p>
+
+                        <p><span style="font-weight: bold;">Agendamentos</span><br />
+                            MARIVALDO BAPTISTA DE OLIVEIRA - marivaldo@dga.unicamp.br - (19) 3521-4929<br />
+                            MARCIO JOSE DOS SANTOS - marcio@dga.unicamp.br - (19) 3521-4930</p>
+
+                        <p><span style="font-weight: bold;">Relatórios e pagamentos</span><br />
+                            ALEXANDRE CARLOS DE OLIVEIRA - alexandre@dga.unicamp.br - (19) 3521-4923<br />
+                            PAULO AUGUSTO BOCCATI - paulo.ab@dga.unicamp.br - (19) 3521-4928</p>
+
+                        <p><span style="font-weight: bold;">Manutenção</span><br />
+                            GETULIO NOGUEIRA ROCHA - getulio@dga.unicamp.br - (19) 3521-4925<br />
+                            SERGIO APARECIDO VICENTIN - vicentin@dga.unicamp.br - (19) 3521-4925</p>
+
+                        <p><span style="font-weight: bold;">Motoristas - (19) 3521-4927</span><br />
+                            ANESIO SOUZA NOGUEIRA - anesio@dga.unicamp.br<br />
+                            EDSON DEZOTE - dezote@dga.unicamp.br<br />
+                            JOSE FELIX DA CRUZ - felix@dga.unicamp.br<br />
+                            JURANDIR ROCHA RIBEIRO - jurandir@dga.unicamp.br<br />
+                            OSVALDO ALVES SOBRINHO - osvaldo@dga.unicamp.br<br />
+                            OSVALDO BOGNAR - bognar@dga.unicamp.br
+                        </p>
+                    </div>
+                    <span class="close-modal btn" onclick="closeModal('modal-equipe')">&times;</span>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

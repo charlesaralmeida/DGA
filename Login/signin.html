@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>        
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>               
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>         
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="firebase_signin.js"></script>    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+    <div class="nav">         
+
+        <div class="nav-logo">
+            <div class="nav-unicamp">
+            <img src="LogotipoUnicamp.png" alt="LogotipoUnicamp.png" width="70" height="70"/>
+            </div>        
+        
+            <div class="nav-dga">
+            <img src="LogotipoDGA.png" alt="LogotipoDGA.png" width="150" height="80"/>
+            </div>
+        </div>
+
+        <div class="nav-nav-transportes">            
+            <div class="nav-transportes">
+                <p>Diretoria de Transportes</p>
+                <p>(19) 3521-4921</p>
+                <p>transportes@dga.unicamp.br</p>
+            </div>
+        </div>
+            
+    </div>
+
+    <hr>   
+    
+    <div style="margin: auto;
+    width: 30%;
+    text-align: center;
+    padding: 10px;"><p>Clique para entrar:</p></div>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader" style="margin: auto;
+    width: 30%;
+    text-align: center;
+    padding: 10px;">Aguarde...</div>
+    
+    <div id="message">
+        <p></p>
+    </div>
+        
+</body>
+</html>
