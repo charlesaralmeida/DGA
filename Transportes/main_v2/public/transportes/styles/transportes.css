@@ -13,7 +13,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: Robot, Arial, Helvetica, sans-serif;
+    font-family: Robot, Arial, Helvetica, sans-serif;    
 }
 
 /* div, img, p {
@@ -136,10 +136,14 @@ body {
     border-color: rgba(85, 84, 84, 0.342);
 }
 
-.highligh-button:active {
-    margin-top: 0.5%;
+.highligh-button:active {    
     box-shadow: none;
     background-color: rgb(180, 6, 6);
+}
+
+.highligh-button p{
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 .highligh-img {
@@ -176,6 +180,7 @@ body {
 
 .services-container-instance p {
     margin-left: 7%;
+    margin-top: 5%;
 }
 
 .services-container-instance-button {
@@ -196,12 +201,11 @@ body {
 
 .services-container-instance-button p {
     text-align: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
-.services-container-instance-button:active {
-    margin-top: 8%;
-    margin-bottom: 4%;
-    margin-left: 55%;
+.services-container-instance-button:active {    
     box-shadow: none;
     background-color: rgb(180, 6, 6);
 }
@@ -256,7 +260,7 @@ body {
 .content-container {    
     width: 100%;    
     display: flex;
-    flex-direction: column;        
+    flex-direction: column;     
     background-color: rgba(255, 255, 255, 0.863);
     color: rgb(0, 0, 0);
 }
@@ -278,8 +282,8 @@ body {
     text-shadow: -1px 0 rgb(180, 6, 6), 0 1px rgb(180, 6, 6), 1px 0 rgb(180, 6, 6), 0 -1px rgb(180, 6, 6);
 }
 
-.content{
-    display: flex;
+.content{    
+    display: flex;    
 }
 
 .content-side-menu{
@@ -294,7 +298,8 @@ body {
 .content-side-menu p{
     font-weight:20;
     padding: 8%;
-    border-top: 1px solid rgb(104, 104, 104);        
+    border-top: 1px solid rgb(104, 104, 104);   
+    margin: 0;     
 }
 
 .content-side-menu p:hover{        
@@ -303,8 +308,18 @@ body {
     font-size: 101%;   
 }
 
-.content-content{
+.content-content{    
     padding: 5%;
+    width: 70%;
+}
+
+.content-content-no-side-bar{        
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-content p, .content-content li{
@@ -315,6 +330,14 @@ body {
     list-style-type: circle;
     margin-left: 6%;
 }
+
+.content-subtitle{
+    font-weight: bold; 
+    font-size: 110%; 
+    color:rgb(190,6,6);
+    padding-top: 3%;
+    padding-bottom: 2%;
+} 
 
 .footer-container {
     /* margin-top:6%; */
@@ -339,17 +362,18 @@ body {
     padding: 2%;
 }
 
+.footer-item ul {
+    margin: 0;
+    padding: 2%;
+    list-style-type:disc;
+}
+
 .footer-item-contact {
     display: flex;
 }
 
 .footer-item-contact p {
     width: 70%;
-}
-
-.footer-item-contact:active {
-    margin-top: 1%;
-    margin-left: 1%;
 }
 
 .modal {
@@ -371,6 +395,7 @@ body {
     flex-direction: column;
     background-color: #fefefe;
     margin: auto;
+    margin-top: 5%;
     border: 1px solid #888;
     width: 50%;
     color: black;    
@@ -381,6 +406,7 @@ body {
     color: black;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 2%;    
 }
 
 .modal-content a {    
@@ -403,6 +429,16 @@ body {
     font-weight: bolder;
     background-color: rgb(59, 59, 59);
     margin-left: 2%;
+    margin-top:2%;
+}
+
+.modal-content-content{
+    margin-top:4%;
+}
+
+.modal-content-content ul{
+    margin-left: 10%;
+    list-style: circle;
 }
 
 .close-modal {
@@ -422,9 +458,8 @@ body {
 }
 
 .close-modal:active{
-    margin-top: 6%;    
-    margin-bottom: 1%;
-    margin-left: 88%;
+    box-shadow: none;
+    background-color: rgb(145, 2, 2);
 }
 
 .loader {
@@ -448,13 +483,11 @@ body {
 100% { transform: rotate(360deg); }
 }
 
-.div_busca{
-    margin-top: 6%;    
+.div_busca{    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 2%; 
+    align-items: center;    
     height: 50px;
 }
 
@@ -515,7 +548,7 @@ table, td, th {
 }
 
 #table{
-    margin-top: 60px;
+    margin-top: 60px;    
     font-size: 1.2em;    
 }
 
@@ -597,4 +630,9 @@ select{
     border-style: solid;
     border-width: 1px 1px 1px 1px;
     border-color: rgba(85, 84, 84, 0.342);      
+}
+
+.instruct-container{
+    display: flex;
+    flex-direction: column;
 }

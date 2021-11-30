@@ -16,30 +16,38 @@ window.onclick = function (event) {
     let modal_equipe = document.getElementById("modal-equipe");
     if (event.target == modal_about) {
         modal_about.style.display = "none";
-    }    
+    }
     if (event.target == modal_taxi) {
         modal_taxi.style.display = "none";
-    }    
+    }
     if (event.target == modal_util_taxi) {
         modal_util_taxi.style.display = "none";
-    }    
+    }
     if (event.target == modal_leilao) {
         modal_leilao.style.display = "none";
-    }    
+    }
     if (event.target == modal_equipe) {
         modal_equipe.style.display = "none";
-    }    
+    }
 }
 
-function openModal(modal){
+function openModal(modal) {
     document.getElementById(modal).style.display = "block";
 }
 
-function closeModal(modal){
+function closeModal(modal) {
     document.getElementById(modal).style.display = "none";
 }
 
-function moveSlide(atual, prox){
-    document.getElementById(atual).style.display="none";
-    document.getElementById(prox).style.display="block";    
+function moveSlide(atual, prox) {
+    document.getElementById(atual).style.display = "none";
+    document.getElementById(prox).style.display = "block";
+}
+
+function show(id) {
+    document.getElementById(id).hidden = false;
+}
+
+function hide(id) {
+    document.getElementById(id).hidden = true;
 }

@@ -11,7 +11,7 @@
 <body>
     <div class="nav-container">
         <div class="nav-logo-container">
-            <img onclick="location.href='https://www.dga.unicamp.br/';" src="img/LogotipoDGA.png" />
+            <img class="btn" onclick="window.open('https://www.dga.unicamp.br/', '_blank');" src="img/LogotipoDGA.png" />
         </div>
         <div class="nav-menu">
             <p onclick="location.href='index.html';">INICIO</p>
@@ -28,7 +28,7 @@
             <p>Normativas</p>
         </div>
         <div class="content-content">
-            <p><span style="color:rgb(190,6,6); font-weight: bold;">Táxi:</span>
+            <p><span class="content-subtitle">Táxi:</span>
                 <br />
                 <br /><span class="btn"
                     onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_102_2021.pdf', '_blank');"
@@ -39,7 +39,7 @@
             <br />
             <hr />
             <br />
-            <p><span style="color:rgb(190,6,6); font-weight: bold;">Agenda de Transportes:</span>
+            <p><span class="content-subtitle">Agenda de Transportes:</span>
                 <br />
                 <br /><span class="btn"
                     onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_063_2008.pdf', '_blank');"
@@ -50,7 +50,7 @@
             <br />
             <hr />
             <br />
-            <p><span style="color:rgb(190,6,6); font-weight: bold;">Utilização dos serviços de transporte:</span>
+            <p><span class="content-subtitle">Utilização dos serviços de transporte:</span>
                 <br />
                 <br /><span class="btn" onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
                     style="font-weight: bold; text-decoration: underline;">Resolução GR-023/2019</span>
@@ -66,7 +66,7 @@
             <br />
             <hr />
             <br />
-            <p><span style="color:rgb(190,6,6); font-weight: bold;">Ônibus, micro-ônibus e vans:</span>
+            <p><span class="content-subtitle">Ônibus, micro-ônibus e vans:</span>
                 <br />
                 <br /><span class="btn"
                     onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_088_2016.pdf', '_blank');"
@@ -77,7 +77,7 @@
             <br />
             <hr />
             <br />
-            <p><span style="color:rgb(190,6,6); font-weight: bold;">Carros oficiais:</span>
+            <p><span class="content-subtitle">Carros oficiais:</span>
                 <br />
                 <br /><span class="btn"
                     onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_055_2006.pdf', '_blank');"
@@ -138,9 +138,11 @@
             </div>
         </div>
         <div class="footer-container-col">
-            <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
-            <p class="btn" onclick="openModal('modal-about')">Sobre</p>
-            <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+            <div class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+                <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+                <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+            </div>
         </div>
         <div class="footer-container-col">
             <div id="contato" class="footer-item">
@@ -162,38 +164,45 @@
                 <div class="modal-bar-content">
                     <p>Sobre a Transportes DGA</p>
                 </div>
-                <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
-                    Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da UNICAMP
-                </p>
+                <div class="modal-content-content">
+                    <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                        Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
+                        UNICAMP
+                    </p>
+                </div>
                 <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
             </div>
         </div>
-
 
         <div id="modal-comunicado-leilao" class="modal">
             <div class="modal-content">
                 <div class="modal-bar-content">
                     <p>Leilão de veículos</p>
                 </div>
-                <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
-                    veículos disponíveis na Universidade.</p>
-                <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
-                <ul>
-                    <div style="margin-left: 4%;">
-                        <li>Idade, quilometragem e estado de conservação do veículo</li>
-                        <li>Frequência de uso</li>
-                        <li>Conveniência do veículo próprio em relação às demais modalidades de transporte disponíveis
-                        </li>
-                    </div>
-                </ul>
-                </p>
-                <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
-                    melhores aproveitados se reinvestidos em outras prioridades.</p>
-                <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
-                    onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
-                    style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
-                    Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os quais possuem diversas vantagens.</p>
-                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a gente</i>.</p>
+                <div class="modal-content-content">
+                    <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                        veículos disponíveis na Universidade.</p>
+                    <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                    <ul>
+                        <div style="margin-left: 4%;">
+                            <li>Idade, quilometragem e estado de conservação do veículo</li>
+                            <li>Frequência de uso</li>
+                            <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
+                                disponíveis
+                            </li>
+                        </div>
+                    </ul>
+                    </p>
+                    <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
+                        melhores aproveitados se reinvestidos em outras prioridades.</p>
+                    <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
+                            onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
+                            style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                            Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os
+                        quais possuem diversas vantagens.</p>
+                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                            gente</i>.</p>
+                </div>
                 <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
             </div>
         </div>
@@ -203,7 +212,7 @@
                 <div class="modal-bar-content">
                     <p>Equipe Transportes DGA</p>
                 </div>
-                <div >
+                <div class="modal-content-content">
                     <p><span style="font-weight: bold;">Coordenador</span><br />
                         CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
                     </p>

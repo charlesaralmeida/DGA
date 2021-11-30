@@ -11,7 +11,8 @@
 <body>
     <div class="nav-container">
         <div class="nav-logo-container">
-            <img onclick="location.href='https://www.dga.unicamp.br/';" src="img/LogotipoDGA.png" />
+            <img class="btn" onclick="window.open('https://www.dga.unicamp.br/', '_blank');"
+                src="img/LogotipoDGA.png" />
         </div>
         <div class="nav-menu">
             <p onclick="location.href='index.html';">INICIO</p>
@@ -27,206 +28,224 @@
         <div class="content-bar">
             <p>Agenda de transportes</p>
         </div>
-        <div class="content-content">
-            <div class="content-links">
-                <p class="btn" onclick="window.open('https://www.dga.unicamp.br/exterlogin/', '_blank');"
-                    style="font-style: italic; text-align:right; color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">
+        <div class="content">
+            <div class="content-side-menu">
+                <p class="btn" onclick="window.open('https://www.dga.unicamp.br/exterlogin/', '_blank');">
                     Agenda Eletrônica
                     de
                     Transportes</p>
+                <p onclick="show('cadastrar');hide('solicitar');hide('alterar');">Cadastro de novo usuário</p>
+                <p onclick="hide('cadastrar');show('solicitar');hide('alterar');">Solicitar transporte</p>
+                <p onclick="hide('cadastrar');hide('solicitar');show('alterar');">Alterar ou cancelar reserva</p>                
                 <p class="btn"
-                    onclick="window.open('https://www.dga.unicamp.br/Html/Servicos/Formularios/Info/AberturaContaWeb/formAberturaContaWeb_extranet.php', '_blank');"
-                    style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                    onclick="window.open('https://www.dga.unicamp.br/Html/Servicos/Formularios/Info/AberturaContaWeb/formAberturaContaWeb_extranet.php', '_blank');">
                     Formulário para cadastro de solicitante</p>
-                <p style="text-align: right;"><span class="btn"
-                        onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_063_2008.pdf', '_blank');"
-                        style="text-decoration: underline;">Instrução Normativa DGA nº 063/2008</span>                    
-                </p>
-                <p style="text-align: right;"><span class="btn"
-                    onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_055_2006.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução Normativa DGA nº 055/2006</span>                    
-            </p>
+                <p class="btn"
+                    onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_063_2008.pdf', '_blank');">
+                    Instrução Normativa DGA nº 063/2008</p>
+                <p class="btn"
+                    onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_055_2006.pdf', '_blank');">
+                    Instrução Normativa DGA nº 055/2006
             </div>
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%;">
-                Solicitar transporte</p>
-            <br />
-            <p>Para solicitar a reserva de um veículo o expedidor deverá solicitar através da Agenda Eletrônica
-                de
-                Transportes, com antecedência mínima de 04 (quatro) horas em relação ao horário de
-                início do serviço.</p>
-            <p>A Agenda Eletrônica
-                de
-                Transportes está programada para fechar o agendamento diário às 16h30min, para o dia
-                corrente.</p>
-            <p>A solicitação efetuada após as 16h30min só aceitara agendamento a partir das 12h30min do dia útil
-                seguinte.</p>
-            <p>As emergências deverão ser tratadas através dos ramais: 14930 ou 14927.</p>
-            <p style="font-weight: bold;">Caso o transporte necessário seja o de pessoa(s) utilizando um carro comum, sugerimos a utilização dos nossos serviços de táxi.</p>
-            <p style="margin-left:2%">Saiba mais: <span class="btn" onclick="window.open('taxi.html', '_blank');"
-                style="font-style: italic; text-align:right; color:rgb(190,6,6); font-weight: bold; text-decoration: underline;">
-                Táxi</span></p>
-            <br />
-            </p>
-            <p><span style=" color:rgb(190,6,6); font-weight: bold;">Repasse do Custo da Viagem:</span><br />
-                No início de cada mês subsequente ao da prestação do serviço, a Transportes DGA
-                encaminhará às Unidades o valor de repasse dos custos com as viagens, conforme estabelece a
-                <span class="btn"
-                    onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_055_2006.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução
-                    Normativa DGA nº 055/2006.</span>
-            </p>
-            <br />
-            <hr />
-            <br />
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Alterar
-                ou cancelar reserva</p>
-            <br />
-            <p>Para alterar ou cancelar uma reserva de veículo, o expedidor deverá acessar a Agenda Eletrônica
-                de
-                Transportes quando a solicitação estiver com status de “Pendente”.</p>
-            <p>Para alterar ou cancelar uma reserva de veículo, quando status da solicitação estiver
-                “Agendado”, o expedidor deverá entrar em contato com a Diretoria de Transportes através dos
-                ramais 14930 ou 14927.</p>
-            <p>Em finais de semana, feriados ou fora do horário de expediente, em caráter excepcional, o
-                cancelamento deverá ser feito diretamente na empresa contratada.</p>
-            <p>O não cancelamento da solicitação em tempo hábil implicará na cobrança para a Unidade/Órgão do
-                valor referente ao serviço solicitado.</p>
-            <br />
-            <hr />
-            <br />
-            <p id="cadastro_agenda" style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Cadastro de novo usuário</p>
-            <br />
-            <p>Para solicitar acesso à Agenda Eletrônica de Transportes, o interessado deve:
-            <ol>
-                <li>Preencher o <span class="btn"
-                        onclick="window.open('https://www.dga.unicamp.br/Html/Servicos/Formularios/Info/AberturaContaWeb/formAberturaContaWeb_extranet.php', '_blank');"
-                        style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
-                        Formulário para cadastro de solicitante</span></li>
-                <li>Imprimir</li>
-                <li>Assinar</li>
-                <li>Recolher a assinatura do responsável em sua Unidade/Órgão (Diretor/ATD/ATU/Expedidor)</li>
-                <li>Digitalizar o formulário assinado e encaminhá-lo por e-mail: transportes@dga.unicamp.br</li>
-            </ol>
-            </p>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
-    <div class="footer-container">
-        <div class="footer-container-col">
-            <div class="footer-item">
-                <p style="font-weight: bold; color: white;"><b>Comunicados</b></p>
-                <ul>
-                    <li class="btn" onclick="openModal('modal-comunicado-leilao')">Leilão de veículos</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-container-col">
-            <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
-            <p class="btn" onclick="openModal('modal-about')">Sobre</p>
-            <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
-        </div>
-        <div class="footer-container-col">
-            <div id="contato" class="footer-item">
-                <p style="font-weight: bold; color: white;"><b>Fale com a gente</b></p>
-                <p>(19) 3521-4921</p>
-                <p>transportes@dga.unicamp.br</p>
-                <div class="footer-item-contact btn">
-                    <p onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');">Rua Josué de Castro,
-                        140 <br> Cidade Universitária "Zeferino Vaz"</p>
-                    <img onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');"
-                        src="img/Google-Maps-logo.png" style="width:8%;height:40px;" />
+            <div class="content-content">
+                <div id="cadastrar" hidden>
+                    <p id="cadastro_agenda"
+                        style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Cadastro de novo usuário</p>
+                    <br />
+                    <p>Para solicitar acesso à Agenda Eletrônica de Transportes, o interessado deve:
+                    <ol>
+                        <li>Preencher o <span class="btn content-subtitle"
+                                onclick="window.open('https://www.dga.unicamp.br/Html/Servicos/Formularios/Info/AberturaContaWeb/formAberturaContaWeb_extranet.php', '_blank');"
+                                style="font-style: italic; text-decoration: underline;">
+                                Formulário para cadastro de solicitante</span></li>
+                        <li>Imprimir</li>
+                        <li>Assinar</li>
+                        <li>Recolher a assinatura do responsável em sua Unidade/Órgão (Diretor/ATD/ATU/Expedidor)</li>
+                        <li>Digitalizar o formulário assinado e encaminhá-lo por e-mail: transportes@dga.unicamp.br</li>
+                    </ol>
+                    </p>
                 </div>
-                <p>Barão Geraldo - Campinas/SP</p>
+                <div id="solicitar" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%;">
+                        Solicitar transporte</p>
+                    <br />
+                    <ul>
+                        <li>Para solicitar a reserva de um veículo o expedidor deverá solicitar através da Agenda
+                            Eletrônica
+                            de
+                            Transportes, com antecedência mínima de 04 (quatro) horas em relação ao horário de
+                            início do serviço.</li>
+                            <br/>
+                        <li>A Agenda Eletrônica
+                            de
+                            Transportes está programada para fechar o agendamento diário às 16h30min, para o dia
+                            corrente.</li>
+                            <br/>
+                        <li>A solicitação efetuada após as 16h30min só aceitara agendamento a partir das 12h30min do dia
+                            útil
+                            seguinte.</li>
+                            <br/>
+                        <li>As emergências deverão ser tratadas através dos ramais: 14930 ou 14927.</li>
+                    </ul>
+
+                    <br />
+                    <br />
+                    <p style="font-weight: bold;">Caso o transporte necessário seja o de pessoa(s) utilizando um carro
+                        comum, sugerimos a utilização dos nossos serviços de táxi.</p>
+                    <p style="margin-left:2%">Saiba mais: <span class="btn content-subtitle"
+                            onclick="window.open('taxi.html', '_blank');"
+                            style="font-style: italic; text-decoration: underline;">
+                            Táxi</span></p>
+                </div>
+                <div id="alterar" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Alterar
+                        ou cancelar reserva</p>
+                    <br />
+                    <ul>
+                        <li>Para alterar ou cancelar uma reserva de veículo, o expedidor deverá acessar a Agenda
+                            Eletrônica
+                            de
+                            Transportes quando a solicitação estiver com status de “Pendente”.</li>
+                            <br/>
+                        <li>Para alterar ou cancelar uma reserva de veículo, quando status da solicitação estiver
+                            “Agendado”, o expedidor deverá entrar em contato com a Diretoria de Transportes através dos
+                            ramais 14930 ou 14927.</li>
+                            <br/>
+                        <li>Em finais de semana, feriados ou fora do horário de expediente, em caráter excepcional, o
+                            cancelamento deverá ser feito diretamente na empresa contratada.</li>
+                            <br/>
+                        <li>O não cancelamento da solicitação em tempo hábil implicará na cobrança para a Unidade/Órgão
+                            do
+                            valor referente ao serviço solicitado.</li>
+                    </ul>
+                </div>
             </div>
+
+
         </div>
 
-        <div id="modal-about" class="modal">
-            <div class="modal-content">
-                <div class="modal-bar-content">
-                    <p>Sobre a Transportes DGA</p>
+        <div class="footer-container">
+            <div class="footer-container-col">
+                <div class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Comunicados</b></p>
+                    <ul>
+                        <li class="btn" onclick="openModal('modal-comunicado-leilao')">Leilão de veículos</li>
+                    </ul>
                 </div>
-                <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
-                    Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da UNICAMP
-                </p>
-                <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
             </div>
-        </div>
-
-        
-        <div id="modal-comunicado-leilao" class="modal">
-            <div class="modal-content">
-                <div class="modal-bar-content">
-                    <p>Leilão de veículos</p>
+            <div class="footer-container-col">
+                <div class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+                    <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+                    <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
                 </div>
-                <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
-                    veículos disponíveis na Universidade.</p>
-                <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
-                <ul>
-                    <div style="margin-left: 4%;">
-                        <li>Idade, quilometragem e estado de conservação do veículo</li>
-                        <li>Frequência de uso</li>
-                        <li>Conveniência do veículo próprio em relação às demais modalidades de transporte disponíveis
-                        </li>
+            </div>
+            <div class="footer-container-col">
+                <div id="contato" class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Fale com a gente</b></p>
+                    <p>(19) 3521-4921</p>
+                    <p>transportes@dga.unicamp.br</p>
+                    <div class="footer-item-contact btn">
+                        <p onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');">Rua Josué de Castro,
+                            140 <br> Cidade Universitária "Zeferino Vaz"</p>
+                        <img onclick="window.open('https://goo.gl/maps/imNqTzbAC3tyAGJU6', '_blank');"
+                            src="img/Google-Maps-logo.png" style="width:8%;height:40px;" />
                     </div>
-                </ul>
-                </p>
-                <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
-                    melhores aproveitados se reinvestidos em outras prioridades.</p>
-                <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
-                    onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
-                    style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
-                    Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os quais possuem diversas vantagens.</p>
-                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a gente</i>.</p>
-                <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
-            </div>
-        </div>
-
-        <div id="modal-equipe" class="modal">
-            <div class="modal-content">
-                <div class="modal-bar-content">
-                    <p>Equipe Transportes DGA</p>
+                    <p>Barão Geraldo - Campinas/SP</p>
                 </div>
-                <div >
-                    <p><span style="font-weight: bold;">Coordenador</span><br />
-                        CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
-                    </p>
-
-                    <p><span style="font-weight: bold;">Frota Oficial</span><br />
-                        PAULO LUCIO RESENDE - paulolucio@dga.unicamp.br - (19) 3521-4927<br />
-                        SEBASTIAO JOSE DE FARIA - tiao@dga.unicamp.br - (19) 3521-4922
-                    </p>
-
-                    <p><span style="font-weight: bold;">Agendamentos</span><br />
-                        MARIVALDO BAPTISTA DE OLIVEIRA - marivaldo@dga.unicamp.br - (19) 3521-4929<br />
-                        MARCIO JOSE DOS SANTOS - marcio@dga.unicamp.br - (19) 3521-4930</p>
-
-                    <p><span style="font-weight: bold;">Relatórios e pagamentos</span><br />
-                        ALEXANDRE CARLOS DE OLIVEIRA - alexandre@dga.unicamp.br - (19) 3521-4923<br />
-                        PAULO AUGUSTO BOCCATI - paulo.ab@dga.unicamp.br - (19) 3521-4928</p>
-
-                    <p><span style="font-weight: bold;">Manutenção</span><br />
-                        GETULIO NOGUEIRA ROCHA - getulio@dga.unicamp.br - (19) 3521-4925<br />
-                        SERGIO APARECIDO VICENTIN - vicentin@dga.unicamp.br - (19) 3521-4925</p>
-
-                    <p><span style="font-weight: bold;">Motoristas - (19) 3521-4927</span><br />
-                        ANESIO SOUZA NOGUEIRA - anesio@dga.unicamp.br<br />
-                        EDSON DEZOTE - dezote@dga.unicamp.br<br />
-                        JOSE FELIX DA CRUZ - felix@dga.unicamp.br<br />
-                        JURANDIR ROCHA RIBEIRO - jurandir@dga.unicamp.br<br />
-                        OSVALDO ALVES SOBRINHO - osvaldo@dga.unicamp.br<br />
-                        OSVALDO BOGNAR - bognar@dga.unicamp.br
-                    </p>
-                </div>
-                <span class="close-modal btn" onclick="closeModal('modal-equipe')">&times;</span>
             </div>
+    
+            <div id="modal-about" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Sobre a Transportes DGA</p>
+                    </div>
+                    <div class="modal-content-content">
+                        <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                            Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
+                            UNICAMP
+                        </p>
+                    </div>
+                    <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
+                </div>
+            </div>
+    
+            <div id="modal-comunicado-leilao" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Leilão de veículos</p>
+                    </div>
+                    <div class="modal-content-content">
+                        <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                            veículos disponíveis na Universidade.</p>
+                        <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                        <ul>
+                            <div style="margin-left: 4%;">
+                                <li>Idade, quilometragem e estado de conservação do veículo</li>
+                                <li>Frequência de uso</li>
+                                <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
+                                    disponíveis
+                                </li>
+                            </div>
+                        </ul>
+                        </p>
+                        <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
+                            melhores aproveitados se reinvestidos em outras prioridades.</p>
+                        <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
+                                onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
+                                style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                                Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os
+                            quais possuem diversas vantagens.</p>
+                        <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                                gente</i>.</p>
+                    </div>
+                    <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
+                </div>
+            </div>
+    
+            <div id="modal-equipe" class="modal">
+                <div class="modal-content">
+                    <div class="modal-bar-content">
+                        <p>Equipe Transportes DGA</p>
+                    </div>
+                    <div class="modal-content-content">
+                        <p><span style="font-weight: bold;">Coordenador</span><br />
+                            CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
+                        </p>
+    
+                        <p><span style="font-weight: bold;">Frota Oficial</span><br />
+                            PAULO LUCIO RESENDE - paulolucio@dga.unicamp.br - (19) 3521-4927<br />
+                            SEBASTIAO JOSE DE FARIA - tiao@dga.unicamp.br - (19) 3521-4922
+                        </p>
+    
+                        <p><span style="font-weight: bold;">Agendamentos</span><br />
+                            MARIVALDO BAPTISTA DE OLIVEIRA - marivaldo@dga.unicamp.br - (19) 3521-4929<br />
+                            MARCIO JOSE DOS SANTOS - marcio@dga.unicamp.br - (19) 3521-4930</p>
+    
+                        <p><span style="font-weight: bold;">Relatórios e pagamentos</span><br />
+                            ALEXANDRE CARLOS DE OLIVEIRA - alexandre@dga.unicamp.br - (19) 3521-4923<br />
+                            PAULO AUGUSTO BOCCATI - paulo.ab@dga.unicamp.br - (19) 3521-4928</p>
+    
+                        <p><span style="font-weight: bold;">Manutenção</span><br />
+                            GETULIO NOGUEIRA ROCHA - getulio@dga.unicamp.br - (19) 3521-4925<br />
+                            SERGIO APARECIDO VICENTIN - vicentin@dga.unicamp.br - (19) 3521-4925</p>
+    
+                        <p><span style="font-weight: bold;">Motoristas - (19) 3521-4927</span><br />
+                            ANESIO SOUZA NOGUEIRA - anesio@dga.unicamp.br<br />
+                            EDSON DEZOTE - dezote@dga.unicamp.br<br />
+                            JOSE FELIX DA CRUZ - felix@dga.unicamp.br<br />
+                            JURANDIR ROCHA RIBEIRO - jurandir@dga.unicamp.br<br />
+                            OSVALDO ALVES SOBRINHO - osvaldo@dga.unicamp.br<br />
+                            OSVALDO BOGNAR - bognar@dga.unicamp.br
+                        </p>
+                    </div>
+                    <span class="close-modal btn" onclick="closeModal('modal-equipe')">&times;</span>
+                </div>
+            </div>
+    
         </div>
-
-    </div>
 </body>
 
 </html>

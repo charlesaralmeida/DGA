@@ -11,7 +11,8 @@
 <body>
     <div class="nav-container">
         <div class="nav-logo-container">
-            <img onclick="location.href='https://www.dga.unicamp.br/';" src="img/LogotipoDGA.png" />
+            <img class="btn" onclick="window.open('https://www.dga.unicamp.br/', '_blank');"
+                src="img/LogotipoDGA.png" />
         </div>
         <div class="nav-menu">
             <p onclick="location.href='index.html';">INICIO</p>
@@ -27,157 +28,178 @@
         <div class="content-bar">
             <p>Frota Oficial</p>
         </div>
-        <div class="content-content">
-            <p style="text-align: right;"><span class="btn"
-                    onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_085_2015.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução Normativa DGA nº 085/2015</span>
-            </p>
-            <p style="text-align: right;"><span class="btn"
-                    onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução Normativa DGA nº 071/2009</span>
-            </p>
-            <p style="text-align: right;"><span class="btn"
-                    onclick="window.open('https://www.pg.unicamp.br/norma/1372/0', '_blank');"
-                    style="text-decoration: underline;">Resolução GR-017/2004</span>
-            </p>
-            <p style="text-align: right;"><span class="btn"
-                    onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
-                    style="text-decoration: underline;">Resolução GR-023/2019</span>
-            </p>
-            <br />
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Credenciamento de condutores</p>
-            <br />
-            <p>Para a condução de veículos oficiais da Universidade é necessário o credenciamento do motorista pela
-                Transportes DGA.</p>
-            <p>Podem ser credenciados:</p>
-            <ul>
-                <li>Funcionários da FUNCAMP contratados na função de motorista</li>
-                <li>Funcionários da UNICAMP e FUNCAMP contratados em outras funções</li>
-                <li>Professores colaboradores e pesquisadores colaboradores</li>
-                <li>Professores convidados</li>
-                <li>Alunos da UNICAMP</li>
-            </ul>
-            <br />
-            <p style="font-weight: bold;color:rgb(190,6,6)">Tipos de credenciamento</p>
-            <p style="margin-left: 2%; font-weight: bold;">Permanente:</p>
-            <ul style="margin-left: 2%;">
-                <li>Servidores da UNICAMP e FUNCAMP</li>
-                <li>Credenciamento válido enquanto a CNH estiver válida</li>
-            </ul>
-            <p style="margin-left: 2%; font-weight: bold;">Eventual:</p>
-            <ul style="margin-left: 2%;">
-                <li>Professores colaboradores, pesquisadores colaboradores e alunos da Universidade sem vínculo
-                    empregatício</li>
-                <li>Credenciamento válido conforme autorização de acordo com a duração do trabalho vinculado à pesquisa
-                </li>
-            </ul>
-            <br />
-            <p style="font-weight: bold;color:rgb(190,6,6)">Procedimentos</p>
-            <br />
-            <p style="margin-left: 2%; font-weight: bold;">Servidores da Unicamp:</p>
-            <ol style="margin-left: 2%;">
-                <li>Preencher e assinar a <span class="btn"
-                        onclick="window.open('docs/Solicitacao_de_Credenciamento_Para_a_Conducao_de_Veiculo_Oficial_Anexo_I.doc');"
-                        style="text-decoration: underline;">Solicitação de Credenciamento para Condução De Veículo
-                        Oficial</span></li>
-                <li>Preencher e assinar o <span class="btn"
-                        onclick="window.open('docs/Termo_de_Responsabilidade_Para_a_Conducao_de_Veiculo_Oficial_Anexo_II.doc');"
-                        style="text-decoration: underline;">Termo de responsabilidade</span></li>
-                <li>Juntamente com ambos os formulários, enviar a documentação do credenciado:
+        <div class="content">
+            <div class="content-side-menu">
+                <p onclick="show('credenciamento');hide('manutencao');hide('lavagem');hide('abastecimento');">
+                    Credenciamento de condutores</p>
+                <p onclick="hide('credenciamento');show('manutencao');hide('lavagem');hide('abastecimento');">Manutenção
+                    de veículos</p>
+                <p onclick="hide('credenciamento');hide('manutencao');show('lavagem');hide('abastecimento');">Lavagem de
+                    veículos</p>
+                <p onclick="hide('credenciamento');hide('manutencao');hide('lavagem');show('abastecimento');">
+                    Abastecimento de combustível</p>
+                <p class="btn"
+                    onclick="window.open('https://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_085_2015.pdf', '_blank');">
+                    Instrução Normativa DGA nº 085/2015</p>
+                <p class="btn"
+                    onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');">
+                    Instrução Normativa DGA nº 071/2009</p>
+                <p class="btn" onclick="window.open('https://www.pg.unicamp.br/norma/1372/0', '_blank');">
+                    Resolução GR-017/2004</p>
+                <p class="btn" onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');">
+                    Resolução GR-023/2019</p>
+            </div>
+            <div class="content-content">
+                <div id="credenciamento" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Credenciamento de condutores</p>
+                    <br />
+                    <p>Para a condução de veículos oficiais da Universidade é necessário o credenciamento do motorista
+                        pela
+                        Transportes DGA.</p>
+                    <p>Podem ser credenciados:</p>
                     <ul>
-                        <li>CNH definitiva (não aceita provisória)</li>
-                        <li>Carteira funcional</li>
+                        <li>Funcionários da FUNCAMP contratados na função de motorista</li>
+                        <li>Funcionários da UNICAMP e FUNCAMP contratados em outras funções</li>
+                        <li>Professores colaboradores e pesquisadores colaboradores</li>
+                        <li>Professores convidados</li>
+                        <li>Alunos da UNICAMP</li>
                     </ul>
-                </li>
-                <li>Todos os documentos e formulários devem ser encaminhados digitalizados por e-mail:
-                    <strong>transportes@dga.unicamp.br</strong>
-                </li>
+                    <br />
+                    <p class="content-subtitle">Tipos de credenciamento</p>
+                    <p style="margin-left: 2%; font-weight: bold;">Permanente:</p>
+                    <ul style="margin-left: 7%;">
+                        <li>Servidores da UNICAMP e FUNCAMP</li>
+                        <li>Credenciamento válido enquanto a CNH estiver válida</li>
+                    </ul>
+                    <p style="margin-left: 2%; font-weight: bold;">Eventual:</p>
+                    <ul style="margin-left: 7%;">
+                        <li>Professores colaboradores, pesquisadores colaboradores e alunos da Universidade sem vínculo
+                            empregatício</li>
+                        <li>Credenciamento válido conforme autorização de acordo com a duração do trabalho vinculado à
+                            pesquisa
+                        </li>
+                    </ul>
+                    <br />
+                    <p class="content-subtitle">Procedimentos</p>
+                    <br />
+                    <p style="margin-left: 2%; font-weight: bold;">Servidores da Unicamp:</p>
+                    <ol style="margin-left: 7%;">
+                        <li>Preencher e assinar a <span class="btn"
+                                onclick="window.open('docs/Solicitacao_de_Credenciamento_Para_a_Conducao_de_Veiculo_Oficial_Anexo_I.doc');"
+                                style="text-decoration: underline;">Solicitação de Credenciamento para Condução De
+                                Veículo
+                                Oficial</span></li>
+                        <li>Preencher e assinar o <span class="btn"
+                                onclick="window.open('docs/Termo_de_Responsabilidade_Para_a_Conducao_de_Veiculo_Oficial_Anexo_II.doc');"
+                                style="text-decoration: underline;">Termo de responsabilidade</span></li>
+                        <li>Juntamente com ambos os formulários, enviar a documentação do credenciado:
+                            <ul>
+                                <li>CNH definitiva (não aceita provisória)</li>
+                                <li>Carteira funcional</li>
+                            </ul>
+                        </li>
+                        <li>Todos os documentos e formulários devem ser encaminhados digitalizados por e-mail:
+                            <strong>transportes@dga.unicamp.br</strong>
+                        </li>
 
-            </ol>
-            <br />
-            <p style="margin-left: 2%; font-weight: bold;">Funcionários da Funcamp:</p>
-            <ol style="margin-left: 2%;"">
-                <li>Preencher e assinar a <span class=" btn"
-                onclick="window.open('docs/Solicitacao_de_Credenciamento_Para_a_Conducao_de_Veiculo_Oficial_Anexo_I.doc');"
-                style="text-decoration: underline;">Solicitação de Credenciamento para Condução De Veículo
-                Oficial</span></li>
-                <li>Preencher e assinar o <span class="btn"
-                        onclick="window.open('docs/Termo_de_Responsabilidade_Para_a_Conducao_de_Veiculo_Oficial_Anexo_II.doc');"
-                        style="text-decoration: underline;">Termo de responsabilidade</span></li>
-                <li>Juntamente com ambos os formulários, enviar a documentação do credenciado:
-                    <ul>
-                        <li>CNH definitiva (não aceita provisória)</li>
-                        <li>Carteira funcional</li>
-                        <li><strong>Termo de responsabilidade emitido pela FUNCAMP</strong></li>
-                    </ul>
-                </li>
-                <li>Todos os documentos e formulários devem ser encaminhados digitalizados por e-mail:
-                    transportes@dga.unicamp.br</li>
+                    </ol>
+                    <br />
+                    <p style="margin-left: 2%; font-weight: bold;">Funcionários da Funcamp:</p>
+                    <ol style="margin-left: 7%;">
+                        <li>Preencher e assinar a <span class=" btn"
+                                onclick="window.open('docs/Solicitacao_de_Credenciamento_Para_a_Conducao_de_Veiculo_Oficial_Anexo_I.doc');"
+                                style="text-decoration: underline;">Solicitação de Credenciamento para Condução De
+                                Veículo
+                                Oficial</span></li>
+                        <li>Preencher e assinar o <span class="btn"
+                                onclick="window.open('docs/Termo_de_Responsabilidade_Para_a_Conducao_de_Veiculo_Oficial_Anexo_II.doc');"
+                                style="text-decoration: underline;">Termo de responsabilidade</span></li>
+                        <li>Juntamente com ambos os formulários, enviar a documentação do credenciado:
+                            <ul>
+                                <li>CNH definitiva (não aceita provisória)</li>
+                                <li>Carteira funcional</li>
+                                <li><strong>Termo de responsabilidade emitido pela FUNCAMP</strong></li>
+                            </ul>
+                        </li>
+                        <li>Todos os documentos e formulários devem ser encaminhados digitalizados por e-mail:
+                            transportes@dga.unicamp.br</li>
 
-            </ol>
-            <br />
-            <p style="margin-left: 2%; font-weight: bold;">Credenciamento eventual:</p>
-            <ol style="margin-left: 2%;">
-                <li>Preencher e assinar o modelo de requerimento contido no Anexo I da <span class="btn"
-                        onclick="window.open('https://www.pg.unicamp.br/norma/1372/0', '_blank');"
-                        style="text-decoration: underline;">Resolução GR-017/2004</span></li>
-                <li>Juntamente com o requerimento, enviar a documentação do credenciado:
+                    </ol>
+                    <br />
+                    <p style="margin-left: 2%; font-weight: bold;">Credenciamento eventual:</p>
+                    <ol style="margin-left: 7%;">
+                        <li>Preencher e assinar o modelo de requerimento contido no Anexo I da <span class="btn"
+                                onclick="window.open('https://www.pg.unicamp.br/norma/1372/0', '_blank');"
+                                style="text-decoration: underline;">Resolução GR-017/2004</span></li>
+                        <li>Juntamente com o requerimento, enviar a documentação do credenciado:
+                            <ul>
+                                <li>CNH definitiva (não aceita provisória)</li>
+                                <li>Carteira funcional ou RA, conforme o caso</li>
+                                <li>Comprovação de existência de seguro contra acidentes pessoais</li>
+                            </ul>
+                        </li>
+                        <li>Todos os documentos e o requerimento devem ser encaminhados digitalizados por e-mail:
+                            transportes@dga.unicamp.br</li>
+                    </ol>
+                </div>
+                <div id="manutencao" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Manutenção de veículos</p>
+                    <br />
+                    <p>A manutenção de veículos é agendada através de solicitação do expedidor da Unidade/Órgão
+                        encaminhada ao
+                        e-mail <span
+                            style="color:rgb(190,6,6); font-weight: bold;">manutencaoveicular@dga.unicamp.br</span>.
+                    </p>
+                    <p>Necessário somente informar:</p>
                     <ul>
-                        <li>CNH definitiva (não aceita provisória)</li>
-                        <li>Carteira funcional ou RA, conforme o caso</li>
-                        <li>Comprovação de existência de seguro contra acidentes pessoais</li>
+                        <li>Número da frota ou placa do veículo</li>
+                        <li>Defeito ou motivo da manutenção</li>
                     </ul>
-                </li>
-                <li>Todos os documentos e o requerimento devem ser encaminhados digitalizados por e-mail:
-                    transportes@dga.unicamp.br</li>
-            </ol>
-            <br />
-            <hr />
-            <br />
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Manutenção de veículos</p>
-            <br />
-            <p>A manutenção de veículos é agendada através de solicitação do expedidor da Unidade/Órgão encaminhada ao
-                e-mail <span style="color:rgb(190,6,6); font-weight: bold;">manutencaoveicular@dga.unicamp.br</span>.
-            </p>
-            <p>Necessário somente informar:</p>
-            <ul>
-                <li>Número da frota ou placa do veículo</li>
-                <li>Defeito ou motivo da manutenção</li>
-            </ul>
-            <p><br /><span class="btn"
-                    onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução Normativa DGA nº 071/2009</span> </p>
-            <br />
-            <hr />
-            <br />
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Lavagem de veículos</p>
-            <br />
-            <p>A lavagem de veículos é realizada através de ordem de serviço emitida pela Transportes DGA.</p>
-            <p>A solicitação do expedidor da Unidade/Órgão é encaminhada ao e-mail <span
-                    style="color:rgb(190,6,6); font-weight: bold;">manutencaoveicular@dga.unicamp.br</span>.</p>
-            <p>Necessário somente informar número da frota ou placa do veículo.</p>
-            <p>Após emitida, a ordem de serviço será encaminhada por e-mail em resposta ao interessado.</p>
-            <p>O veículo será encaminhado para lavagem por condutor credenciado da Unidade/Órgão.</p>
-            <br />
-            <hr />
-            <br />
-            <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
-                Abastecimento de combustível</p>
-            <br />
-            <p>O abastecimento de combustível é realizado através de uma rede credenciada de postos conforme contratação
-                formalizada através de processo licitatório.</p>
-            <p>O veículo deve ser abastecido por condutor credenciado da Unidade/Órgão através do cartão respectivo a
-                cada veículo.</p>
-            <p>A lista de postos credenciados pode ser consultada no seguinte link: <span class="btn"
-                    onclick="window.open('abastecimento/index.html', '_blank');"
-                    style="text-decoration: underline; color:rgb(190,6,6);font-weight: bold;">Postos credenciados</span>
-            </p>
-            <p><br /><span class="btn"
-                    onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');"
-                    style="text-decoration: underline;">Instrução Normativa DGA nº 071/2009</span> </p>
+                    <p><br /><span class="btn"
+                            onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');"
+                            style="text-decoration: underline;">Instrução Normativa DGA nº 071/2009</span> </p>
+                </div>
+                <div id="lavagem" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Lavagem de veículos</p>
+                    <br />
+                    <ul>
+                        <li>A lavagem de veículos é realizada através de ordem de serviço emitida pela Transportes DGA.
+                        </li>
+                        <li>A solicitação do expedidor da Unidade/Órgão é encaminhada ao e-mail <span
+                                style="color:rgb(190,6,6); font-weight: bold;">manutencaoveicular@dga.unicamp.br</span>.
+                        </li>
+                        <li>Necessário somente informar número da frota ou placa do veículo.</li>
+                        <li>Após emitida, a ordem de serviço será encaminhada por e-mail em resposta ao interessado.
+                        </li>
+                        <li>O veículo será encaminhado para lavagem por condutor credenciado da Unidade/Órgão.</li>
+                    </ul>
+                </div>
+                <div id="abastecimento" hidden>
+                    <p style="text-align: center;color: black;font-weight: bold; width:100%; font-size: 130%">
+                        Abastecimento de combustível</p>
+                    <br />
+                    <ul>
+                        <li>O abastecimento de combustível é realizado através de uma rede credenciada de postos conforme
+                            contratação
+                            formalizada através de processo licitatório.</li>
+                        <li>O veículo deve ser abastecido por condutor credenciado da Unidade/Órgão através do cartão
+                            respectivo a
+                            cada veículo.</li>
+                        <li>A lista de postos credenciados pode ser consultada no seguinte link: <span class="btn"
+                                onclick="window.open('abastecimento/index.html', '_blank');"
+                                style="text-decoration: underline; color:rgb(190,6,6);font-weight: bold;">Postos
+                                credenciados</span>
+                        </li>
+                    </ul>
+                    <p><br /><span class="btn"
+                            onclick="window.open('http://www.dga.unicamp.br/Conteudos/Legislacao/InstrucoesNormativasDGA/Instrucao_DGA_n_071_2009.pdf', '_blank');"
+                            style="text-decoration: underline;">Instrução Normativa DGA nº 071/2009</span> </p>
+                </div>
+            </div>
+
 
         </div>
 
@@ -191,9 +213,11 @@
                 </div>
             </div>
             <div class="footer-container-col">
-                <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
-                <p class="btn" onclick="openModal('modal-about')">Sobre</p>
-                <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+                <div class="footer-item">
+                    <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+                    <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+                    <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+                </div>
             </div>
             <div class="footer-container-col">
                 <div id="contato" class="footer-item">
@@ -216,42 +240,47 @@
                     <div class="modal-bar-content">
                         <p>Sobre a Transportes DGA</p>
                     </div>
-                    <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
-                        Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
-                        UNICAMP
-                    </p>
+                    <div class="modal-content-content">
+                        <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                            Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
+                            UNICAMP
+                        </p>
+                    </div>
                     <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
                 </div>
             </div>
-
 
             <div id="modal-comunicado-leilao" class="modal">
                 <div class="modal-content">
                     <div class="modal-bar-content">
                         <p>Leilão de veículos</p>
                     </div>
-                    <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
-                        veículos disponíveis na Universidade.</p>
-                    <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
-                    <ul>
-                        <div style="margin-left: 4%;">
-                            <li>Idade, quilometragem e estado de conservação do veículo</li>
-                            <li>Frequência de uso</li>
-                            <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
-                                disponíveis
-                            </li>
-                        </div>
-                    </ul>
-                    </p>
-                    <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
-                        melhores aproveitados se reinvestidos em outras prioridades.</p>
-                    <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
-                            onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
-                            style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
-                            Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os
-                        quais possuem diversas vantagens.</p>
-                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
-                            gente</i>.</p>
+                    <div class="modal-content-content">
+                        <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                            veículos disponíveis na Universidade.</p>
+                        <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                        <ul>
+                            <div style="margin-left: 4%;">
+                                <li>Idade, quilometragem e estado de conservação do veículo</li>
+                                <li>Frequência de uso</li>
+                                <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
+                                    disponíveis
+                                </li>
+                            </div>
+                        </ul>
+                        </p>
+                        <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem
+                            ser
+                            melhores aproveitados se reinvestidos em outras prioridades.</p>
+                        <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
+                                onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
+                                style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                                Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos
+                            locados, os
+                            quais possuem diversas vantagens.</p>
+                        <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                                gente</i>.</p>
+                    </div>
                     <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
                 </div>
             </div>
@@ -261,7 +290,7 @@
                     <div class="modal-bar-content">
                         <p>Equipe Transportes DGA</p>
                     </div>
-                    <div>
+                    <div class="modal-content-content">
                         <p><span style="font-weight: bold;">Coordenador</span><br />
                             CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
                         </p>
@@ -295,6 +324,7 @@
                     <span class="close-modal btn" onclick="closeModal('modal-equipe')">&times;</span>
                 </div>
             </div>
+
         </div>
 </body>
 

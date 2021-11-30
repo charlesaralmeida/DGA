@@ -11,7 +11,8 @@
 <body>
     <div class="nav-container">
         <div class="nav-logo-container">
-            <img onclick="window.open('https://www.dga.unicamp.br/', '_blank');" src="img/LogotipoDGA.png" />
+            <img class="btn" onclick="window.open('https://www.dga.unicamp.br/', '_blank');"
+                src="img/LogotipoDGA.png" />
         </div>
         <div class="nav-menu">
             <p onclick="location.href='index.html';">INICIO</p>
@@ -42,7 +43,7 @@
             </div>
             <div class="services-container-instance">
                 <img src="img/taxi.jpg" />
-                <p>TAXI</p>
+                <p>TÁXI</p>
                 <div onclick="location.href='taxi.html';" class="services-container-instance-button btn">
                     <p>Saiba mais</p>
                 </div>
@@ -66,6 +67,9 @@
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
     <div class="mobile-container">
         <div class="mobile-header">
             <p>Baixe o app do táxi!</p>
@@ -80,6 +84,7 @@
                     onclick="window.open('https://play.google.com/store/apps/details?id=br.com.taxidigitaluse&hl=pt/', '_blank');"
                     src="img/google_play.png">
             </div>
+            <br/>
             <p>Se você já é cadastrado para utilização do táxi, faça o download do aplicativo e solicite transporte
                 sempre que precisar, esteja onde estiver</p>
         </div>
@@ -95,9 +100,11 @@
             </div>
         </div>
         <div class="footer-container-col">
-            <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
-            <p class="btn" onclick="openModal('modal-about')">Sobre</p>
-            <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+            <div class="footer-item">
+                <p style="font-weight: bold; color: white;"><b>Transportes DGA</b></p>
+                <p class="btn" onclick="openModal('modal-about')">Sobre</p>
+                <p class="btn" onclick="openModal('modal-equipe')">Equipe</p>
+            </div>
         </div>
         <div class="footer-container-col">
             <div id="contato" class="footer-item">
@@ -119,9 +126,12 @@
                 <div class="modal-bar-content">
                     <p>Sobre a Transportes DGA</p>
                 </div>
-                <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
-                    Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da UNICAMP
-                </p>
+                <div class="modal-content-content">
+                    <p>Realiza a gestão da frota de veículos, próprios ou de terceiros, colocados à disposição da
+                        Universidade para atendimento de traslados e viagens de interesse das Unidades e Órgãos da
+                        UNICAMP
+                    </p>
+                </div>
                 <span class="close-modal btn" onclick="closeModal('modal-about')">&times;</span>
             </div>
         </div>
@@ -131,25 +141,28 @@
                 <div class="modal-bar-content">
                     <p>Leilão de veículos</p>
                 </div>
-                <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
-                    veículos disponíveis na Universidade.</p>
-                <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
-                <ul>
-                    <div style="margin-left: 4%;">
-                        <li>Idade, quilometragem e estado de conservação do veículo</li>
-                        <li>Frequência de uso</li>
-                        <li>Conveniência do veículo próprio em relação às demais modalidades de transporte disponíveis
-                        </li>
-                    </div>
-                </ul>
-                </p>
-                <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
-                    melhores aproveitados se reinvestidos em outras prioridades.</p>
-                <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
-                    onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
-                    style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
-                    Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os quais possuem diversas vantagens.</p>
-                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a gente</i>.</p>
+                <div class="modal-content-content">
+                    <p>Estamos atualmente realizando o processo de credenciamento de leiloeiros para a alienação dos
+                        veículos disponíveis na Universidade.</p>
+                    <p>O recolhimento de tais veículos leva em consideração os seguintes fatores:
+                    <ul>                        
+                            <li>Idade, quilometragem e estado de conservação do veículo</li>
+                            <li>Frequência de uso</li>
+                            <li>Conveniência do veículo próprio em relação às demais modalidades de transporte
+                                disponíveis
+                            </li>                        
+                    </ul>
+                    </p>
+                    <p>Considerando os fatores elencados acima, em muitos casos os recursos obtidos no leilão podem ser
+                        melhores aproveitados se reinvestidos em outras prioridades.</p>
+                    <p>Além disso, observados certos critérios e em especial o Art. 12 da <span class="btn"
+                            onclick="window.open('https://www.pg.unicamp.br/norma/16505/0', '_blank');"
+                            style="font-style: italic; text-align: right; color:rgb(190,6,6); font-weight: bold;text-decoration: underline;">
+                            Resolução GR 23/2019</span>, o veículo próprio pode ser substituído por veículos locados, os
+                        quais possuem diversas vantagens.</p>
+                    <p>Caso sua Unidade/Órgão possua veículos que poderiam ser recolhidos, por favor, <i>fale com a
+                            gente</i>.</p>
+                </div>
                 <span class="close-modal btn" onclick="closeModal('modal-comunicado-leilao')">&times;</span>
             </div>
         </div>
@@ -159,7 +172,7 @@
                 <div class="modal-bar-content">
                     <p>Equipe Transportes DGA</p>
                 </div>
-                <div >
+                <div class="modal-content-content">
                     <p><span style="font-weight: bold;">Coordenador</span><br />
                         CHARLES ARTHUR DA ROCHA ALMEIDA - charles.almeida@dga.unicamp.br - (19) 3521-4921
                     </p>
